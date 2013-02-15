@@ -1,0 +1,11 @@
+D:\projekti-local\MRI\Placeberry\dev\PB_Parser\bin\Debug\config.xml
+D:\projekti-local\MRI\Placeberry\dev\PB_Parser\bin\Debug\PB_Parser.exe
+D:\projekti-local\MRI\Placeberry\dev\PB_Parser\bin\Debug\PB_Parser.pdb
+D:\projekti-local\MRI\Placeberry\dev\PB_Parser\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\projekti-local\MRI\Placeberry\dev\PB_Parser\obj\x86\Debug\PB_Parser.exe
+D:\projekti-local\MRI\Placeberry\dev\PB_Parser\obj\x86\Debug\PB_Parser.pdb
+I:\MyGit\pb-dev\Placeberry\PB_Parser\bin\Debug\config.xml
+I:\MyGit\pb-dev\Placeberry\PB_Parser\bin\Debug\PB_Parser.exe
+I:\MyGit\pb-dev\Placeberry\PB_Parser\bin\Debug\PB_Parser.pdb
+I:\MyGit\pb-dev\Placeberry\PB_Parser\obj\x86\Debug\PB_Parser.exe
+I:\MyGit\pb-dev\Placeberry\PB_Parser\obj\x86\Debug\PB_Parser.pdb

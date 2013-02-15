@@ -1,0 +1,9 @@
+D:\projekti-local\MRI\Placeberry\dev\LibGoogleWeather\bin\Debug\LibGoogleWeather.dll
+D:\projekti-local\MRI\Placeberry\dev\LibGoogleWeather\bin\Debug\LibGoogleWeather.pdb
+D:\projekti-local\MRI\Placeberry\dev\LibGoogleWeather\obj\Debug\ResolveAssemblyReference.cache
+D:\projekti-local\MRI\Placeberry\dev\LibGoogleWeather\obj\Debug\LibGoogleWeather.dll
+D:\projekti-local\MRI\Placeberry\dev\LibGoogleWeather\obj\Debug\LibGoogleWeather.pdb
+I:\MyGit\pb-dev\Placeberry\LibGoogleWeather\bin\Debug\LibGoogleWeather.dll
+I:\MyGit\pb-dev\Placeberry\LibGoogleWeather\bin\Debug\LibGoogleWeather.pdb
+I:\MyGit\pb-dev\Placeberry\LibGoogleWeather\obj\Debug\LibGoogleWeather.dll
+I:\MyGit\pb-dev\Placeberry\LibGoogleWeather\obj\Debug\LibGoogleWeather.pdb

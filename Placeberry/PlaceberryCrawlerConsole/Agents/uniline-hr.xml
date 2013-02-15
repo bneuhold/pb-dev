@@ -1,0 +1,256 @@
+<!-- Copyright (C) 2008 Mozenda, Inc. All rights reserved. -->
+
+  <Agent>
+  <Version>1.0i</Version>
+  <IeVersion>9.0</IeVersion>
+  <AgentDefinition>
+
+    <!--- - - - - - - - Actions - - - - - - - - -->
+
+    <ActionList>
+
+      <Action>
+        <ActionType>LoadPage</ActionType>
+        <Page>0</Page>
+        <DestinationPage>1</DestinationPage>
+        <PageUrl>http://www.uniline.hr/hrvatska/</PageUrl>
+      </Action>
+
+      <!-- Page 1 -->
+
+      <Action>
+        <ActionType>PagePlaceHolder</ActionType>
+        <Page>1</Page>
+        <Encoding>UTF8</Encoding>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>www.uniline.hr</PredefinedValue>
+        <FieldName>01Source</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>hr</PredefinedValue>
+        <FieldName>02Language</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>Hrvatska</PredefinedValue>
+        <FieldName>15Country</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>BeginAnchorList</ActionType>
+        <Page>1</Page>
+        <ItemXPath>/html[1]/body[1]/div[1]/header[1]/nav[2]/div/a[1]</ItemXPath>
+        <ItemCounter>4</ItemCounter>
+        <ListName>AccomTypeList</ListName>
+      </Action>
+      
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <FieldName>03GroupType</FieldName>
+      </Action>
+      
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <FieldName>07AccommType</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>ClickElement</ActionType>
+        <Page>1</Page>
+        <DestinationPage>2</DestinationPage>
+        <ItemXPath>.</ItemXPath>
+      </Action>
+
+      <Action>
+        <ActionType>EndList</ActionType>
+        <Page>1</Page>
+        <ListName>AccomTypeList</ListName>
+      </Action>
+
+
+      <!-- Page 2 -->
+
+      <Action>
+        <ActionType>PagePlaceHolder</ActionType>
+        <Page>2</Page>
+        <Encoding>UTF8</Encoding>
+      </Action>
+      
+      <Action>
+        <ActionType>BeginAnchorList</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="object-list"]/div[2]/section/div[1]/header/a[1]</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[1]/div[1]/div[1]/section[5]/div[2]/section/div[1]/header[1]/a[1]</ItemXPath>
+        <ListName>TitleList</ListName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <StartExpressionSeparator>href="</StartExpressionSeparator>
+        <EndExpressionSeparator>"</EndExpressionSeparator>
+        <FieldName>11URLLink</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <FieldName>06Title</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <StartExpressionSeparator>-</StartExpressionSeparator>
+        <FieldName>19City</FieldName>
+      </Action>
+      
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../../div[1]/a[1]/div[1]/img[1]</ItemXPath>
+        <ItemXPath>../../div[1]/a[1]/div[1]/div[1]</ItemXPath>
+        <StartExpressionSeparator>src="</StartExpressionSeparator>
+        <EndExpressionSeparator>"</EndExpressionSeparator>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <FieldName>12PictureURL</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../../div[1]/div[1]</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <Replacement Type="Regex" To=", ">\s{2,}</Replacement>
+        <FieldName>33Description</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../div[1]/a[2]</ItemXPath>
+        <ItemXPath>../div[1]</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <!-- oco je za slucaj kad prvi xpath ne radi pa ga reze iz drugog. Zato mora imati MustExist na false -->
+        <!-- expression separatori rade prije pozia HttpUtility.HtmlDecode pa koristiti '&gt;' -->
+        <StartExpressionSeparator MustExist="false"><![CDATA[&gt;]]></StartExpressionSeparator>
+        <EndExpressionSeparator MustExist="false"><![CDATA[&gt;]]></EndExpressionSeparator>
+        <FieldName>16Region</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../div[1]/a[3]</ItemXPath>
+        <ItemXPath>../div[1]</ItemXPath>
+        <!-- replacementi rade prije nakon poziva HttpUtility.HtmlDecode pa koristiti '>' -->
+        <Replacement Type="Regex">(.|\n)*></Replacement>
+        <NodeValueType>InnerText</NodeValueType>
+        <FieldName>41Locus</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../div[1]</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <StartExpressionSeparator>Lokacija:</StartExpressionSeparator>
+        <Replacement Type="Regex" To=" ">\s{2,}</Replacement>
+        <FieldName>14LocationDesc</FieldName>
+      </Action>
+      
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../../div[1]/div[1]</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <StartExpressionSeparator>More: </StartExpressionSeparator>
+        <EndExpressionSeparator>m</EndExpressionSeparator>
+        <FieldName>37BeachDistanceM</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../../div[1]/div[1]</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <StartExpressionSeparator>Centar:</StartExpressionSeparator>
+        <EndExpressionSeparator>m</EndExpressionSeparator>
+        <FieldName>38DistanceFromCentreM</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../../div[1]/div[2]/div[1]/span[1]</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <FieldName>22Price</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../a[2]</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <StartExpressionSeparator>latlng="</StartExpressionSeparator>
+        <EndExpressionSeparator>,</EndExpressionSeparator>
+        <FieldName>42GMLatitude</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../a[2]</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <StartExpressionSeparator>,</StartExpressionSeparator>
+        <EndExpressionSeparator>"</EndExpressionSeparator>
+        <FieldName>43GMLongitude</FieldName>
+      </Action>
+      
+      <Action>
+        <ActionType>ActionCommand</ActionType>
+        <Page>2</Page>
+        <CommandLine>Insert Advert</CommandLine>
+      </Action>
+
+      <Action>
+        <ActionType>EndList</ActionType>
+        <Page>2</Page>
+        <ListName>TitleList</ListName>
+      </Action>
+
+      <Action>
+        <ActionType>PageList</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="object-list"]/div[3]/div/a[11]</ItemXPath>
+        <ItemXPath>//*[@id="object-list"]/div[3]/div/a[12]</ItemXPath>
+        <StartExpressionSeparator>href="</StartExpressionSeparator>
+        <EndExpressionSeparator>" class="uni-pagi-page uni-pagi-page-next"</EndExpressionSeparator>
+        <NodeValueType>OuterHtml</NodeValueType>
+      </Action>      
+      
+    </ActionList>
+
+  </AgentDefinition>
+</Agent>

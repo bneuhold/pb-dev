@@ -1,0 +1,17 @@
+D:\projekti-local\MRI\Placeberry\dev\UrlCheckerService\bin\Debug\UrlCheckerService.exe
+D:\projekti-local\MRI\Placeberry\dev\UrlCheckerService\bin\Debug\UrlCheckerService.pdb
+D:\projekti-local\MRI\Placeberry\dev\UrlCheckerService\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\projekti-local\MRI\Placeberry\dev\UrlCheckerService\obj\x86\Debug\UrlCheckerService.ProjectInstaller.resources
+D:\projekti-local\MRI\Placeberry\dev\UrlCheckerService\obj\x86\Debug\UrlCheckerService.Service1.resources
+D:\projekti-local\MRI\Placeberry\dev\UrlCheckerService\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\projekti-local\MRI\Placeberry\dev\UrlCheckerService\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\projekti-local\MRI\Placeberry\dev\UrlCheckerService\obj\x86\Debug\UrlCheckerService.exe
+D:\projekti-local\MRI\Placeberry\dev\UrlCheckerService\obj\x86\Debug\UrlCheckerService.pdb
+I:\MyGit\pb-dev\Placeberry\UrlCheckerService\bin\Debug\UrlCheckerService.exe
+I:\MyGit\pb-dev\Placeberry\UrlCheckerService\bin\Debug\UrlCheckerService.pdb
+I:\MyGit\pb-dev\Placeberry\UrlCheckerService\obj\x86\Debug\UrlCheckerService.csprojResolveAssemblyReference.cache
+I:\MyGit\pb-dev\Placeberry\UrlCheckerService\obj\x86\Debug\UrlCheckerService.ProjectInstaller.resources
+I:\MyGit\pb-dev\Placeberry\UrlCheckerService\obj\x86\Debug\UrlCheckerService.Service1.resources
+I:\MyGit\pb-dev\Placeberry\UrlCheckerService\obj\x86\Debug\UrlCheckerService.csproj.GenerateResource.Cache
+I:\MyGit\pb-dev\Placeberry\UrlCheckerService\obj\x86\Debug\UrlCheckerService.exe
+I:\MyGit\pb-dev\Placeberry\UrlCheckerService\obj\x86\Debug\UrlCheckerService.pdb

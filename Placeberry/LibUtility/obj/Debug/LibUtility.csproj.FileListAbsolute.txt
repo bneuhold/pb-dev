@@ -1,0 +1,15 @@
+D:\projekti-local\MRI\Placeberry\dev\LibUtility\bin\Debug\LibUtility.dll
+D:\projekti-local\MRI\Placeberry\dev\LibUtility\bin\Debug\LibUtility.pdb
+D:\projekti-local\MRI\Placeberry\dev\LibUtility\bin\Debug\nunit.framework.dll
+D:\projekti-local\MRI\Placeberry\dev\LibUtility\bin\Debug\RealWorld.Grids.dll
+D:\projekti-local\MRI\Placeberry\dev\LibUtility\bin\Debug\nunit.framework.xml
+D:\projekti-local\MRI\Placeberry\dev\LibUtility\obj\Debug\ResolveAssemblyReference.cache
+D:\projekti-local\MRI\Placeberry\dev\LibUtility\obj\Debug\LibUtility.dll
+D:\projekti-local\MRI\Placeberry\dev\LibUtility\obj\Debug\LibUtility.pdb
+I:\MyGit\pb-dev\Placeberry\LibUtility\bin\Debug\LibUtility.dll
+I:\MyGit\pb-dev\Placeberry\LibUtility\bin\Debug\LibUtility.pdb
+I:\MyGit\pb-dev\Placeberry\LibUtility\bin\Debug\nunit.framework.dll
+I:\MyGit\pb-dev\Placeberry\LibUtility\bin\Debug\RealWorld.Grids.dll
+I:\MyGit\pb-dev\Placeberry\LibUtility\bin\Debug\nunit.framework.xml
+I:\MyGit\pb-dev\Placeberry\LibUtility\obj\Debug\LibUtility.dll
+I:\MyGit\pb-dev\Placeberry\LibUtility\obj\Debug\LibUtility.pdb

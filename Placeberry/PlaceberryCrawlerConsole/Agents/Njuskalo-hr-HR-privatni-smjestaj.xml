@@ -1,0 +1,255 @@
+<!-- Copyright (C) 2008 Mozenda, Inc. All rights reserved. -->
+
+<Agent>
+  <Version>1.0i</Version>
+  <IeVersion>9.0</IeVersion>
+  <AgentDefinition>
+
+    <!--- - - - - - - - Actions - - - - - - - - -->
+
+    <ActionList>
+
+      <Action>
+        <ActionType>LoadPage</ActionType>
+        <Page>0</Page>
+        <DestinationPage>1</DestinationPage>
+        <PageUrl>http://www.njuskalo.hr/privatni-smjestaj</PageUrl>
+      </Action>
+
+      <!-- Page 1 -->
+
+      <Action>
+        <ActionType>PagePlaceHolder</ActionType>
+        <Page>1</Page>
+        <Encoding>UTF8</Encoding>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>www.njuskalo.hr</PredefinedValue>
+        <FieldName>01Source</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>hr</PredefinedValue>
+        <FieldName>02Language</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>Hrvatska</PredefinedValue>
+        <FieldName>15Country</FieldName>
+      </Action>
+
+      <!--  Ovo su onih prvih 5 kaj se mjenjaju nonstop
+      
+      <Action>
+        <ActionType>BeginAnchorList</ActionType>
+        <Page>1</Page>
+        <ItemXPath>//*[@id="push_up"]/div[7]/div[7]/div[3]/div[1]/div[1]/ul[1]/li/div[1]/div[2]/h4[1]/a[1]</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[3]/div[2]/div[1]/div[7]/div[7]/div[3]/div[1]/div[1]/ul[1]/li/div[1]/div[2]/h4[1]/a[1]</ItemXPath>
+        <ListName>PushUpTitleList</ListName>
+      </Action>
+
+      <Action>
+        <ActionType>EndList</ActionType>
+        <Page>1</Page>
+        <ListName>PushUpTitleList</ListName>
+      </Action>
+      -->
+
+      <Action>
+        <ActionType>BeginAnchorList</ActionType>
+        <Page>1</Page>
+        <ItemXPath>//*[@id="_frm_mass_process"]/ul[1]/li/div[1]/div[2]/h4[1]/a[1]</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[3]/div[2]/div[1]/div[7]/div[7]/div[3]/form[1]/ul[1]/li/div[1]/div[2]/h4[1]/a[1]</ItemXPath>
+        <ListName>TitleList</ListName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <StartExpressionSeparator>f="</StartExpressionSeparator>
+        <EndExpressionSeparator>"</EndExpressionSeparator>
+        <FieldName>11URLLink</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <ItemXPath>../../preceding-sibling::div[1]/a[1]/img[1]</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <StartExpressionSeparator>src="</StartExpressionSeparator>
+        <EndExpressionSeparator>"</EndExpressionSeparator>
+        <FieldName>12PictureURL</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>ClickElement</ActionType>
+        <Page>1</Page>
+        <DestinationPage>2</DestinationPage>
+        <ItemXPath>.</ItemXPath>
+      </Action>
+
+      <Action>
+        <ActionType>EndList</ActionType>
+        <Page>1</Page>
+        <ListName>TitleList</ListName>
+      </Action>
+
+      <Action>
+        <ActionType>PageList</ActionType>
+        <Page>1</Page>
+        <ItemXPath>//div[4]/div[normalize-space(.)='Sljedeća &amp;gt;']</ItemXPath>   <!-- pazi, tu mora ostati &amp;gt;, tak je page sourceu-->
+        <StartExpressionSeparator>vezu_full('</StartExpressionSeparator>
+        <EndExpressionSeparator>')</EndExpressionSeparator>
+        <NodeValueType>OuterHtml</NodeValueType>
+      </Action>
+
+      <!-- Page 2 -->
+      
+      <Action>
+        <ActionType>PagePlaceHolder</ActionType>
+        <Page>2</Page>
+        <Encoding>UTF8</Encoding>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_summary_div"]/div[1]/h1[1]</ItemXPath>
+        <FieldName>06Title</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_summary_div"]/table[1]/tr[3]/td[1]</ItemXPath>
+        <StartExpressionSeparator>no:</StartExpressionSeparator>
+        <Replacement Type="Regex" To=" ">\s{2,}</Replacement>
+        <FieldName>25PriceDesc</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_summary_div"]/table[1]/tr[3]/td[1]</ItemXPath>
+        <StartExpressionSeparator>no:</StartExpressionSeparator>
+        <EndExpressionSeparator MustExist="false">-</EndExpressionSeparator>
+        <FieldName>22Price</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_summary_div"]/table[1]/tr[3]/td[1]</ItemXPath>
+        <StartExpressionSeparator>EUR -</StartExpressionSeparator>
+        <EndExpressionSeparator Include="true">EUR</EndExpressionSeparator>
+        <FieldName>23PriceTo</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_details_div_main"]/table[1]/tr[1]/td[1]/table[1]/tr[1]</ItemXPath>
+        <StartExpressionSeparator>Županija:</StartExpressionSeparator>
+        <FieldName>16Region</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_details_div_main"]/table[1]/tr[1]/td[1]/table[1]/tr[2]</ItemXPath>
+        <StartExpressionSeparator>Grad:</StartExpressionSeparator>
+        <FieldName>19City</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_details_div_main"]/table[1]/tr[1]/td[1]/table[1]/tr[3]</ItemXPath>
+        <StartExpressionSeparator>Općina:</StartExpressionSeparator>
+        <FieldName>17Subregion</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_details_div_main"]/table[1]/tr[1]/td[1]/table[1]/tr[4]</ItemXPath>
+        <StartExpressionSeparator>Tip objekta:</StartExpressionSeparator>
+        <FieldName>07AccommType</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_details_div_main"]/table[1]/tr[1]/td[1]/div[1]/p[1]</ItemXPath>
+        <FieldName>33Description</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_details_div_main"]/table[1]/tr[1]/td[1]/div[1]/ul[1]/li[1]</ItemXPath>
+        <StartExpressionSeparator>Kapacitet:</StartExpressionSeparator>
+        <FieldName>29Capacity</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_details_div_main"]/table[1]/tr[1]/td[1]/div/ul[1]/li[4]</ItemXPath>
+        <StartExpressionSeparator>plaže:</StartExpressionSeparator>
+        <EndExpressionSeparator>m</EndExpressionSeparator>
+        <FieldName>37BeachDistanceM</FieldName>
+      </Action>
+      
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="ad_details_div_main"]/table[1]/tr[1]/td[2]/div[3]/p[1]</ItemXPath>
+        <NodeValueType>InnerHtml</NodeValueType>
+        <StartExpressionSeparator Include="true"><![CDATA[<strong>Tel:]]></StartExpressionSeparator>
+        <EndExpressionSeparator><![CDATA[<br>]]></EndExpressionSeparator>
+        <Replacement><![CDATA[<strong>]]></Replacement>
+        <Replacement><![CDATA[</strong>]]></Replacement>
+        <Replacement Type="Regex" To=" ">\s{2,}</Replacement>
+        <FieldName>21ContactInfo</FieldName>
+      </Action>
+      
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="push_up"]/div[7]/div[3]/div[1]/div[4]/script[1]</ItemXPath>
+        <ItemXPath>//*[@id="push_up"]/div[7]/div[3]/div[1]/div[5]/script[1]</ItemXPath>
+        <StartExpressionSeparator>ult_point(</StartExpressionSeparator>
+        <EndExpressionSeparator>,</EndExpressionSeparator>
+        <FieldName>42GMLatitude</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="push_up"]/div[7]/div[3]/div[1]/div[4]/script[1]</ItemXPath>
+        <ItemXPath>//*[@id="push_up"]/div[7]/div[3]/div[1]/div[5]/script[1]</ItemXPath>
+        <StartExpressionSeparator>ult_point(</StartExpressionSeparator>
+        <EndExpressionSeparator>);</EndExpressionSeparator>
+        <Replacement Type="Regex">.*,</Replacement>
+        <FieldName>43GMLongitude</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>ActionCommand</ActionType>
+        <Page>2</Page>
+        <CommandLine>Insert Advert</CommandLine>
+      </Action>
+      
+    </ActionList>
+  </AgentDefinition>
+</Agent>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56CC8233-9A9A-4018-91A9-C887647D8776}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PlaceberryCrawlerConsole</RootNamespace>
+    <AssemblyName>PlaceberryCrawlerConsole</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>lib\Interop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>lib\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WatiN.Core, Version=2.1.0.1196, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\WatiN.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\ActionBase.cs" />
+    <Compile Include="Actions\ActionCommand.cs" />
+    <Compile Include="Actions\BeginAnchorList.cs" />
+    <Compile Include="Actions\ClickElement.cs" />
+    <Compile Include="Actions\EndList.cs" />
+    <Compile Include="Actions\ExpressionSeparator.cs" />
+    <Compile Include="Actions\GetElementValue.cs" />
+    <Compile Include="Actions\LoadPage.cs" />
+    <Compile Include="Actions\Page.cs" />
+    <Compile Include="Actions\PageList.cs" />
+    <Compile Include="Actions\PagePlaceHolder.cs" />
+    <Compile Include="Actions\Replacement.cs" />
+    <Compile Include="Adverts\AdvertManager.cs" />
+    <Compile Include="Adverts\CsvWriter.cs" />
+    <Compile Include="Adverts\Table.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Adverts\AdvertFieldsConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\apartmanihrvatska-cz.xml" />
+    <Content Include="Agents\apartmanihrvatska-de.xml" />
+    <Content Include="Agents\apartmanihrvatska-en.xml" />
+    <Content Include="Agents\apartmanihrvatska-fr.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\apartmanihrvatska-hr.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\apartmanihrvatska-it.xml" />
+    <Content Include="Agents\belgrade-shortstay-hr.xml" />
+    <Content Include="Agents\dream-journey-yachting-en.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\dream-journey-yachting-hr.xml" />
+    <Content Include="Agents\hrvatskaapartmani-hr.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\Liburnia-HR-smjestaj.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\Njuskalo-hr-HR-privatni-smjestaj.xml" />
+    <Content Include="Agents\smjestaj-cz.xml" />
+    <Content Include="Agents\smjestaj-de.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\smjestaj-en.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\smjestaj-hr.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\smjestaj-it.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\uniline-cz.xml" />
+    <Content Include="Agents\uniline-de.xml" />
+    <Content Include="Agents\uniline-en.xml" />
+    <Content Include="Agents\uniline-hr.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\uniline-it.xml" />
+    <Content Include="Agents\visit-hvar-de.xml" />
+    <Content Include="Agents\visit-hvar-hr.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Agents\visit-hvar-it.xml" />
+    <Content Include="lib\HtmlAgilityPack.dll" />
+    <Content Include="lib\HtmlAgilityPack.pdb" />
+    <Content Include="lib\HtmlAgilityPack.XML" />
+    <Content Include="lib\Interop.SHDocVw.dll" />
+    <Content Include="lib\Microsoft.mshtml.dll" />
+    <Content Include="lib\WatiN.Core.dll" />
+    <Content Include="XMLFile1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link type="text/css" media="all" rel="Stylesheet" href="/resources/css/style.css" />
+    <script src="/resources/scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="/resources/scripts/jquery.qtip-1.0.0-rc3.min.js" type="text/javascript"></script>
+    <script src="/resources/scripts/jquery.minitabs.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="wrap">
+<div class="left_bar">
+    <div class="logo_image"><img src="resources/images/tmp_agency_logo.jpg" alt="" /></div>
+    <div class="contact_box">
+    <span class="contact_label">Address</span>
+    <span class="contact_data">Superturska 58, Zadar, Croatia</span>
+    <span class="contact_label">Contacts</span>
+    <span class="contact_data">
+    M:  +385 91 555 6666 <br />
+    P:   +385 91 555 6666 <br />
+    E:   ture@super.com <br />
+    </span>
+    <span class="contact_label">Website</span>
+    <span class="contact_data">
+    <a href="#" title="">www.musingbuddha.com</a><br />
+    <a href="#" title="">Follow us on Facebook</a>
+    </span>
+    <input type="button" class="contact_button" value="Contact us" />
+    <div class="contact_box_top"><!-- top --></div>
+    <div class="contact_box_bottom"><!-- bottom --></div>
+    </div>
+</div>
+
+<div class="content">
+<h1>Mussing Budha</h1>
+<p class="description">
+Post-Graduate Student at Cambridge University with a passion for Arabian horses, Persian cats and arts. 
+I love love Istanbul and that is why I am centering my research around activities in the city, will have an 
+installation about breaking silences in September in one of the art galleries in town...
+</p>
+<ul class="listings">
+    <li class="sponsored clearfix">
+        <h1><a href="#">The Center of Zadar - sunny apt</a><br />
+        Zadar, Hrvatska, Sjeverna Dalmacija, Zadar
+        </h1>
+        <img src="resources/images/img_slika1.jpg" alt="" width="90" height="60" class="image" />
+        <p>Hotel Le Meridien Lav dvokrevetna soba (pogled more) classic noćenje i doručak 
+        25.02.- 27.02. 910,00 kn po osobi</p>
+        <div class="left_ad"><img src="resources/images/img_allianz.png" alt="" /></div>
+        <div class="listing_price">878/day</div>
+        <div class="info_zone">
+            <span class="info_btn"></span>
+            <span class="persons">4</span>
+            <span class="type">apartment</span>  
+        </div>
+    </li>
+    <li class="sponsored clearfix">
+        <h1><a href="#">The Center of Zadar - sunny apt</a><br />
+        Zadar, Hrvatska, Sjeverna Dalmacija, Zadar
+        </h1>
+        <img src="resources/images/img_slika1.jpg" alt="" width="90" height="60" class="image" />
+        <p>Hotel Le Meridien Lav dvokrevetna soba (pogled more) classic noćenje i doručak 
+        25.02.- 27.02. 910,00 kn po osobi</p>
+        <div class="left_ad"><img src="resources/images/img_allianz.png" alt="" /></div>
+        <div class="listing_price">878/day</div>
+        <div class="info_zone">
+            <span class="info_btn"></span>
+            <span class="persons">4</span>
+            <span class="type">apartment</span>  
+        </div>
+    </li>
+    <li class="clearfix">
+        <h1><a href="#">The Center of Zadar - sunny apt</a><br />
+        Zadar, Hrvatska, Sjeverna Dalmacija, Zadar
+        </h1>
+        <img src="resources/images/img_slika2.jpg" alt="" width="90" height="60" class="image" />
+        <p>Hotel Le Meridien Lav dvokrevetna soba (pogled more) classic noćenje i doručak 
+        25.02.- 27.02. 910,00 kn po osobi</p>
+        <div class="left_ad"><img src="resources/images/img_allianz.png" alt="" /></div>
+        <div class="listing_price">878/day</div>
+        <div class="info_zone">
+            <span class="info_btn"></span>
+            <span class="persons">3</span>
+            <span class="type">hotel</span>
+        </div>
+    </li>
+</ul>
+</div>
+</div>
+<script type="text/javascript">
+    $(".info_btn").qtip({
+        content: { url: 'InfoBox.aspx', data: { id: 1 } },
+        position: {
+            corner: {
+                target: 'rightMiddle',
+                tooltip: 'leftMiddle'
+            }
+        },
+        style: {
+            width: 280,
+            padding: 1,
+            background: '#ffffff',
+            color: 'black',
+            border: {
+                width: 0,
+                radius: 3,
+                color: '#006f9a'
+            },
+            tip: 'leftMiddle'
+        },
+        hide: { when: 'mouseout', fixed: true }
+
+    });
+</script>
+</body>
+</html>
