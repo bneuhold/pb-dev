@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterSimple.master.cs" Inherits="MasterSimple" %>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Putovalica</title>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="/resources/styles/main.css"/>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">        window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+    <script src="resources/scripts/main.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+    <header class="header">
+        <div class="container">
+
+            <div class="header-top">
+                <a class="logo" id="logo" href="<%= Page.ResolveUrl("~/Default.aspx") %>">
+                    <img src="/resources/img/logo.png" alt="Putovalica" />
+                </a>
+            </div>
+
+            <div class="header-nav">
+            </div>
+        </div>
+    </header>
+
+
+    <div class="main container" id="main">
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+
+    <footer>
+        <div class="container">
+
+        <div style="display:block; width:100%; height:40px;"></div>
+
+        <div class="footer-info" style="border-top:0px solid #87D6F5;">
+            <p>Putovalica.hr, portal za usluge i turistička agencija, Iblerov trg 9, Zagreb - Hrvatska TEL: +385 (1) 6418 777   FAX: +385 (1) 6418 780</p>
+            <p>MB 80710197,  OIB: 85419333575,  ID KOD: HR-AB-01-080710197</p>
+            <p>Copyright © 2011. Putovalica.hr, za usluge i turistička agencija, sva prava pridržana.</p>
+            <a href="<%= Page.ResolveUrl("~/Default.aspx") %>" class="footer-logo"><img src="/resources/img/logo-footer.png" alt="Putovalica"></a>
+        </div>
+
+        </div>
+    </footer>
+
+    </form>
+</body>
+</html>

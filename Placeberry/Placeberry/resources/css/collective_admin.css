@@ -1,0 +1,215 @@
+﻿div.main_content
+{
+    clear:both;
+    font-size:13px;
+    color: #666666;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width:100%;
+    margin:25px auto;
+    text-align:center;
+    
+}
+
+div.admin_links
+{
+    width:100%;
+    text-align:center;
+}
+
+div.back_link
+{
+    display:block;
+    width:100%;
+    text-align:left;
+    font-size:13px;
+}
+
+div.admin_links p
+{
+    padding:3px 0;
+}
+
+div.cat_data
+{
+    display:inline-block;
+    font-size:13px;
+}
+
+div.cat_data input
+{
+    color:#666666;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding:2px;
+}
+
+div.err_msg
+{
+    font-size:13px;
+    color: Red;
+    font-family: Arial,Helvetica,sans-serif;
+    width:100%;
+    text-align:center;
+    margin:25px auto 0 auto;
+}
+
+div.operation_title
+{
+    width:100%;
+    display:block;
+    margin:0 auto 30px auto;
+    text-align:center;
+    font-size:16px;
+}
+
+div.operation_title select { color:#666666; font-size: 14px; border-style:solid; border-color:Gray; border-width:1px; }
+
+div.edit_trans_title
+{
+    width:100%;
+    display:block;
+    margin-top:16px;
+    margin-bottom:12px;
+    text-align:left;
+    font-size:14px;
+}
+
+div.grid
+{
+    display:inline-block;
+}
+
+th.grid_header
+{
+    border-color: Gray;
+    border-style: solid;
+    border-width: 1px;
+    height: 25px;
+    font-size:12px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+td.grid_item
+{
+    border-color: Gray;
+    border-style: dashed;
+    border-width: 1px;
+    height: 25px;
+    padding:5px 5px 5px 5px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+td.empty_grid_item
+{
+    border-color: Gray;
+    border-style: dashed;
+    border-width: 1px;
+    height: 25px;
+    padding:15px 5px 15px 5px;
+    text-align:center;
+    text-align:center;
+    vertical-align:middle;
+}
+
+td.grid_footer
+{
+    border-color: Gray;
+    border-style: solid;
+    border-width: 1px;
+    height: 25px;
+    padding:5px 5px 5px 5px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+td.grid_item input { color:#666666; font-size: 14px; border-style:solid; border-color:Gray; border-width:1px; }
+td.grid_item select { color:#666666; font-size: 14px; border-style:solid; border-color:Gray; border-width:1px; }
+td.grid_item textarea { color:#666666; font-size: 14px; border-style:solid; border-color:Gray; border-width:1px; }
+
+td.grid_footer input { color:#666666; font-size: 14px; border-style:solid; border-color:Gray; border-width:1px; }
+td.grid_footer select { color:#666666; font-size: 14px; border-style:solid; border-color:Gray; border-width:1px; }
+td.grid_footer textarea { color:#666666; font-size: 14px; border-style:solid; border-color:Gray; border-width:1px; }
+
+td.grid_left
+{
+    text-align:left;
+}
+
+table.offer_form
+{
+    
+}
+
+table.offer_form input[type="text"]
+{
+    color:#666666;
+    width: 194px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+table.offer_form select
+{
+    color:#666666;
+    width: 197px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    height: 21px;
+}
+
+table.offer_form input[type="submit"]
+{
+    border: 1px solid #4D4D4D;
+    color:#262626;
+    background: #C7D2FF;
+    margin-top:25px;
+}
+
+span.cb_active input
+{
+    margin-left:0px;
+}
+
+div.btn_save input[type="submit"]
+{
+    border: 1px solid #4D4D4D;
+    color:#262626;
+    background: #C7D2FF;
+    margin:10px 0 10px 0;
+}
+
+p.offer_trans
+{
+    margin:15px 0 6px 0;
+    font-size:14px;
+}
+
+p.offer_trans input[type="text"]
+{
+    color:#666666;
+    width: 400px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+table.offer_upload_img
+{
+    
+}
+
+table.offer_upload_img td
+{
+    height:24px;
+    vertical-align:top;
+}
+
+table.offer_upload_img input[type="text"]
+{
+    color:#666666;
+    width: 220px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+

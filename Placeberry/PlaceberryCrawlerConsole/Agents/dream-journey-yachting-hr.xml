@@ -1,0 +1,206 @@
+<!-- Copyright (C) 2008 Mozenda, Inc. All rights reserved. -->
+
+  <Agent>
+  <Version>1.0i</Version>
+  <IeVersion>9.0</IeVersion>
+  <AgentDefinition>
+
+    <!--- - - - - - - - Actions - - - - - - - - -->
+
+    <ActionList>
+
+      <Action>
+        <ActionType>LoadPage</ActionType>
+        <Page>0</Page>
+        <DestinationPage>1</DestinationPage>
+        <PageUrl>http://www.dream-journey-yachting.com/hr/</PageUrl>
+      </Action>
+
+      <!-- Page 1 -->
+
+      <Action>
+        <ActionType>PagePlaceHolder</ActionType>
+        <Page>1</Page>
+        <Encoding>Default</Encoding>
+        <BaseUrl>http://www.dream-journey-yachting.com/hr/</BaseUrl>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>www.dream-journey-yachting.com</PredefinedValue>
+        <FieldName>01Source</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>hr</PredefinedValue>
+        <FieldName>02Language</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>Hrvatska</PredefinedValue>
+        <FieldName>15Country</FieldName>
+      </Action>
+      
+      <Action>
+        <ActionType>BeginAnchorList</ActionType>
+        <Page>1</Page>
+        <ItemXPath>//*[@id="smoothmenu1"]/ul/li/a</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[1]/div[2]/ul[1]/li/a[1]</ItemXPath>
+        <ListName>CategoryList</ListName>
+        <ItemCounter>5</ItemCounter>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <FieldName>03GroupType</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>ClickElement</ActionType>
+        <Page>1</Page>
+        <DestinationPage>2</DestinationPage>
+        <ItemXPath>.</ItemXPath>
+      </Action>
+
+      <Action>
+        <ActionType>EndList</ActionType>
+        <Page>1</Page>
+        <ListName>CategoryList</ListName>
+      </Action>
+
+      <!-- Page 2 -->
+
+      <Action>
+        <ActionType>PagePlaceHolder</ActionType>
+        <Page>2</Page>
+        <Encoding>UTF8</Encoding>
+        <BaseUrl>http://www.dream-journey-yachting.com/hr/</BaseUrl>
+      </Action>
+
+      <Action>
+        <ActionType>BeginAnchorList</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="cube1"]/h4/a</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[1]/div[5]/div[2]/div/h4[1]/a[1]</ItemXPath>
+        <ListName>TitleList</ListName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <FieldName>06Title</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <StartExpressionSeparator>href="</StartExpressionSeparator>
+        <EndExpressionSeparator>"</EndExpressionSeparator>
+        <FieldName>11URLLink</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../following-sibling::a[1]/img[1]</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <StartExpressionSeparator>src="</StartExpressionSeparator>
+        <EndExpressionSeparator>"</EndExpressionSeparator>
+        <FieldName>12PictureURL</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../following-sibling::ul[1]</ItemXPath>
+        <NodeValueType>InnerHtml</NodeValueType>        
+        <EndExpressionSeparator><![CDATA[<li>>>]]></EndExpressionSeparator>
+        <Replacement><![CDATA[                <li>]]></Replacement>
+        <Replacement><![CDATA[<li>]]></Replacement>
+        <Replacement><![CDATA[</li>]]></Replacement>
+        <FieldName>33Description</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>../following-sibling::ul[1]/li[4]</ItemXPath>
+        <NodeValueType>InnerText</NodeValueType>
+        <StartExpressionSeparator>Ležajevi:</StartExpressionSeparator>
+        <FieldName>31CapacityDesc</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>ClickElement</ActionType>
+        <Page>2</Page>
+        <DestinationPage>3</DestinationPage>
+        <ItemXPath>.</ItemXPath>
+      </Action>      
+      
+      <Action>
+        <ActionType>ActionCommand</ActionType>
+        <Page>2</Page>
+        <CommandLine>Insert Advert</CommandLine>
+      </Action>
+
+      <Action>
+        <ActionType>EndList</ActionType>
+        <Page>2</Page>
+        <ListName>TitleList</ListName>
+      </Action>      
+      
+      <Action>
+        <ActionType>PageList</ActionType>
+        <Page>2</Page>
+        <DestinationPage>2</DestinationPage>
+        <!-- next moze bit na 3, 5, 7, 9 mjestu -->
+        <!-- 3 -->
+        <ItemXPath>//*[@id="main2"]/div[2]/ul/li[3]/a</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[1]/div[5]/div[2]/ul[1]/li[3]/a[1]</ItemXPath>
+        <!-- 5 -->
+        <ItemXPath>//*[@id="main2"]/div[2]/ul/li[5]/a</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[1]/div[5]/div[2]/ul[1]/li[5]/a[1]</ItemXPath>
+        <!-- 7 -->
+        <ItemXPath>//*[@id="main2"]/div[2]/ul/li[7]/a</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[1]/div[5]/div[2]/ul[1]/li[7]/a[1]</ItemXPath>
+        <!-- 9 -->
+        <ItemXPath>//*[@id="main2"]/div[2]/ul/li[9]/a</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[1]/div[5]/div[2]/ul[1]/li[9]/a[1]</ItemXPath>
+        
+        <StartExpressionSeparator>href='</StartExpressionSeparator>
+        <EndExpressionSeparator>'><![CDATA[&raquo;]]></EndExpressionSeparator>
+        <NodeValueType>OuterHtml</NodeValueType>
+      </Action>
+
+      <!-- Page 2 -->
+      <Action>
+        <ActionType>PagePlaceHolder</ActionType>
+        <Page>3</Page>
+        <Encoding>UTF8</Encoding>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>3</Page>
+        <ItemXPath>//*[@id="sidebar2"]/span[1]/a[1]</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[1]/div[5]/span[1]/a[1]</ItemXPath>
+        <NodeValueType>InnerHtml</NodeValueType>
+        <FieldName>19City</FieldName>
+      </Action>
+      
+    </ActionList>
+
+  </AgentDefinition>
+</Agent>

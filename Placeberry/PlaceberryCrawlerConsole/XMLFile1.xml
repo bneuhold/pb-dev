@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <columns>
+    <column>01Source</column>
+    <column>02Language</column>
+    <column>03GroupType</column>
+    <column>04GroupSubType</column>
+    <column>05SourceCategory</column>
+    <column>06Title</column>
+    <column>07AccommType</column>
+    <column>08AccommSubType</column>
+    <column>09VacationType</column>
+    <column>10AdvertCode</column>
+    <column>11URLLink</column>
+    <column>12PictureURL</column>
+    <column>13Stars</column>
+    <column>14LocationDesc</column>
+    <column>15Country</column>
+    <column>16Region</column>
+    <column>17Subregion</column>
+    <column>18Island</column>
+    <column>19City</column>
+    <column>20Address</column>
+    <column>21ContactInfo</column>
+    <column>22Price</column>
+    <column>23PriceTo</column>
+    <column>24PriceOld</column>
+    <column>25PriceDesc</column>
+    <column>26Date1</column>
+    <column>27Date2</column>
+    <column>28DateDesc</column>
+    <column>29Capacity</column>
+    <column>30CapacityTo</column>
+    <column>31CapacityDesc</column>
+    <column>32DaysNum</column>
+    <column>33Description</column>
+    <column>34Activities</column>
+    <column>35Facilities</column>
+    <column>36Beach</column>
+    <column>37BeachDistanceM</column>
+    <column>38DistanceFromCentreM</column>
+    <column>39PetsDesc</column>
+    <column>40InfoDesc</column>
+    <column>41Locus</column>
+    <column>42GMLatitude</column>
+    <column>43GMLongitude</column>
+  </columns>
+</config>
+
+<!--
+
+
+-->

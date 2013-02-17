@@ -1,0 +1,357 @@
+﻿
+
+div.main_content
+{
+    clear:both;
+    font-size:13px;
+    color: #666666;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width:580px;
+    margin:30px auto;
+}
+
+div.load_error
+{
+    font-size:14px;
+    color: Red;
+    font-family: Arial,Helvetica,sans-serif;
+    width:100%;
+    text-align:center;
+    margin:50px 0 350px 0;
+}
+
+div.calendar
+{    
+    display:inline;
+    margin:10px 0 25px 0;    
+    clear:both;
+    float:left;
+}
+
+div.calendar td
+{
+    text-align:center;
+    padding: 1px 1px 1px 1px;
+}
+
+div.calendar th
+{
+    text-align:center;
+    padding: 1px 4px;
+}
+
+div.right_selection
+{
+    display:inline;
+    margin:80px 0 0 0;    
+    float:right;    
+    width:305px;
+}
+
+div.calendar a:link { text-decoration:none; }
+div.calendar a:visited { text-decoration:none; }
+div.calendar a:hover { text-decoration:underline; }
+div.calendar table { border-style:none; }
+
+
+div.select_text
+{
+    clear:both;
+    float:left;
+    margin:10px 0 0 0;
+    height:17px;
+    padding:2px 5px 0 0;
+}
+
+div.select_style
+{
+    float:left;
+    display:inline;
+    margin:10px 0 0 0;
+    background: url(../images/down_arrow_select.jpg) no-repeat right;
+    overflow:hidden;
+    width: 50px;
+    height: 21px;
+}
+
+div.select_style select 
+{
+    background:transparent;
+    color:#696969;
+    width: 50px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    width: 68px;
+    height: 21px;
+    -webkit-appearance: none;
+}
+div.select_style option
+{    
+    text-align:center;
+}
+
+div.price_by_day
+{
+    clear:both;
+    float:left;
+    display:inline;
+    margin:20px 0 10px 150px;
+}
+
+div.price_by_day_rep
+{
+    margin-left:40px;
+}
+
+div.info_content
+{
+    clear:both;
+    float:left;
+    width:100%;
+    margin-left:122px;
+}
+
+div.info_label
+{
+    clear:both;
+    float:left;
+    display:inline;
+    margin:14px 0 0 0;
+    width:80px;
+}
+
+div.info_text_box
+{
+    float:left;
+    display:inline;
+    margin:12px 2px 0 0;
+}
+
+div.info_text_box input
+{
+    color:#666666;
+    width: 194px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+div.email_err
+{
+    clear:both;
+    float:left;
+    width:276px;
+    margin:15px 0 20px 0;
+    text-align:center;
+}
+
+div.payment_content
+{
+    clear:both;
+    display:block;
+    margin-left:48px;
+}
+
+div.promocode_title
+{
+    clear:both;
+    float:left;
+    display:inline;
+    margin:35px 0 20px 0;
+    color: #1E81A9;
+    font-size: 16px;    
+}
+
+div.promocode_label
+{
+    clear:both;
+    float:left;
+    display:inline;
+    padding:6px 5px 0 0;
+}
+
+div.promocode_textbox
+{
+    float:left;
+    display:inline;
+    padding:3px 8px 0 0;
+}
+
+div.promocode_textbox input
+{
+    color:#696969;
+    width: 156px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+div.prmocode_btn
+{
+    float:left;
+    display:inline;
+}
+
+div.prmocode_btn a
+{
+    background: url("../images/dodaj_btn_bg.png") repeat-x scroll 0 0 transparent;
+    border: medium none !important;
+    color: #145A82;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-weight: bold;
+    padding: 5px 0 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 82px;    
+}
+
+div.promocode_err
+{
+    clear:both;
+    float:left;
+    display:inline;
+    margin:15px 0 25px 0;
+    width:336px;
+    text-align:center;
+    color:#DB7070;
+}
+
+div.bottom_content
+{
+    clear:both;
+    display:block;
+    padding-top:10px;
+    margin-left:150px;
+}
+
+div.buttons
+{
+    clear:both;
+    display:block;
+    width:100%;
+    padding-top:20px;
+    padding-bottom:60px;
+}
+
+div.back
+{
+    clear:both;
+    float:left;
+    display:inline;
+}
+
+div.next
+{
+    float:right;
+    display:inline;
+}
+
+div.button a
+{
+    background: url("../images/rezerviraj_btn_bg.png") repeat-x scroll 0 0 transparent;
+    border: medium none !important;
+    color: #145A82;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-weight: bold;
+    padding: 16px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 82px;    
+}
+
+div.err_msg
+{
+    clear:both;
+    float:left;
+    display:inline;
+    margin:10px 0 20px 150px;
+    width:270px;
+    color:#DB7070;
+    text-align:left;
+}
+
+div.booking_success
+{
+    clear:both;
+    float:left;
+    display:inline;
+    margin:40px 0 45px 105px;
+    text-align:center;
+    color: #1E81A9;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+div.booking_success_msg
+{
+    clear:both;
+    float:left;
+    display:inline;
+    margin:10px 0 50px 105px;
+    text-align:left;
+    width:350px;
+}
+
+/* ADMIN */
+
+div.accomm_list_title
+{
+    clear:both;
+    float:left;
+    margin-right:7px;
+}
+
+div.accomm_list
+{
+    float:left;
+}
+
+div.accomm_list li
+{
+    margin-bottom:4px;
+}
+
+div.calendar_container
+{
+    width: 100%;
+    height: 160px;
+    clear: both;
+    display: block;
+    text-align:center;
+}
+
+div.calendar_admin
+{    
+    display:inline;
+}
+
+div.calendar_admin td
+{
+    text-align:center;
+    padding: 1px 1px 1px 1px;
+}
+
+div.calendar_admin th
+{
+    text-align:center;
+    padding: 1px 4px;
+}
+
+div.edit_input
+{
+    display:inline;
+    float:left;
+}
+
+div.edit_input input
+{
+    color:#696969;
+    width: 156px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin:9px 0 0 0;
+}
+
+

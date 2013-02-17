@@ -1,0 +1,232 @@
+<!-- Copyright (C) 2008 Mozenda, Inc. All rights reserved. -->
+
+<Agent>
+  <Version>1.0i</Version>
+  <IeVersion>9.0</IeVersion>
+  <AgentDefinition>
+
+    <!--- - - - - - - - Actions - - - - - - - - -->
+
+    <ActionList>
+
+      <Action>
+        <ActionType>LoadPage</ActionType>
+        <Page>0</Page>
+        <DestinationPage>1</DestinationPage>
+        <PageUrl>http://www.appartementcroatie.fr/search?country=Europa</PageUrl>
+      </Action>
+
+      <!-- Page 1 -->
+
+      <Action>
+        <ActionType>PagePlaceHolder</ActionType>
+        <Page>1</Page>
+        <Encoding>Default</Encoding>
+        <BaseUrl>http://www.appartementcroatie.fr/search?country=Europa</BaseUrl>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>www.appartementcroatie.fr</PredefinedValue>
+        <FieldName>01Source</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <PredefinedValue>fr</PredefinedValue>
+        <FieldName>02Language</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>BeginAnchorList</ActionType>
+        <Page>1</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[2]/div[1]/div/div[1]/div[2]/a[1]</ItemXPath>
+        <ItemXPath>/html[1]/body[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div/div[1]/div[2]/a[1]</ItemXPath>
+        <ListName>TitleList</ListName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <ItemXPath>.</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <StartExpressionSeparator>f="</StartExpressionSeparator>
+        <EndExpressionSeparator>"</EndExpressionSeparator>
+        <FieldName>11URLLink</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>1</Page>
+        <ItemXPath>../preceding-sibling::div[1]/a[1]/img</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+        <StartExpressionSeparator>src="</StartExpressionSeparator>
+        <EndExpressionSeparator>"</EndExpressionSeparator>
+        <FieldName>12PictureURL</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>ClickElement</ActionType>
+        <Page>1</Page>
+        <DestinationPage>2</DestinationPage>
+        <ItemXPath>.</ItemXPath>
+      </Action>
+
+      <Action>
+        <ActionType>EndList</ActionType>
+        <Page>1</Page>
+        <ListName>TitleList</ListName>
+      </Action>
+
+      <Action>
+        <ActionType>PageList</ActionType>
+        <Page>1</Page>
+        <DestinationPage>1</DestinationPage>
+        <ItemXPath>//a[normalize-space(.)='next']</ItemXPath>
+        <NodeValueType>OuterHtml</NodeValueType>
+      </Action>
+
+      <!-- Page 2 -->
+
+      <Action>
+        <ActionType>PagePlaceHolder</ActionType>
+        <Page>2</Page>
+        <Encoding>UTF8</Encoding>
+        <BaseUrl>http://www.appartementcroatie.fr/search?country=Europa</BaseUrl>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[1]/a[2]</ItemXPath>
+        <FieldName>15Country</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[1]/a[3]</ItemXPath>
+        <FieldName>14LocationDesc</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[1]/a[3]</ItemXPath>
+        <EndExpressionSeparator MustExist="false">(</EndExpressionSeparator>
+        <FieldName>19City</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[1]/a[4]</ItemXPath>
+        <FieldName>07AccommType</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[2]/h1[1]/strong</ItemXPath>
+        <FieldName>06Title</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]</ItemXPath>
+        <StartExpressionSeparator>Personnes</StartExpressionSeparator>
+        <FieldName>31CapacityDesc</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/ul[2]/li[2]</ItemXPath>
+        <StartExpressionSeparator>Plage</StartExpressionSeparator>
+        <EndExpressionSeparator>m</EndExpressionSeparator>
+        <FieldName>37BeachDistanceM</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="half_description"]</ItemXPath>
+        <EndExpressionSeparator Include="true" MustExist="false">...</EndExpressionSeparator>
+        <Replacement Type="Regex" To=" ">\s{2,}</Replacement>
+        <FieldName>33Description</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[3]/div[2]/div[2]/div[1]/div</ItemXPath>
+        <EndExpressionSeparator>-</EndExpressionSeparator>
+        <Replacement Type="Regex">[^(\d|.|,)]*</Replacement>
+        <FieldName>22Price</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[3]/div[2]/div[2]/div[1]/div</ItemXPath>
+        <StartExpressionSeparator>-</StartExpressionSeparator>
+        <EndExpressionSeparator><![CDATA[&euro;]]></EndExpressionSeparator>
+        <Replacement Type="Regex">[^(\d|.|,)]*</Replacement>
+        <FieldName>23PriceTo</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[3]/div[2]/div[2]/div[1]/div</ItemXPath>
+        <Replacement Type="Regex" To=" ">\s{2,}</Replacement>
+        <FieldName>25PriceDesc</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/p[2]</ItemXPath>
+        <StartExpressionSeparator>Adresse:</StartExpressionSeparator>
+        <EndExpressionSeparator MustExist="false">,</EndExpressionSeparator>
+        <FieldName>20Address</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>//*[@id="content"]/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/p</ItemXPath>
+        <FieldName>21ContactInfo</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>/html/body/div[2]/div[3]/div/div[3]/div[2]/div/div[4]/div[2]/script[1]</ItemXPath>
+        <StartExpressionSeparator>tialize('</StartExpressionSeparator>
+        <EndExpressionSeparator>' , '</EndExpressionSeparator>
+        <FieldName>42GMLatitude</FieldName>
+      </Action>
+
+      <Action>
+        <ActionType>GetElementValue</ActionType>
+        <Page>2</Page>
+        <ItemXPath>/html/body/div[2]/div[3]/div/div[3]/div[2]/div/div[4]/div[2]/script[1]</ItemXPath>
+        <StartExpressionSeparator>' , '</StartExpressionSeparator>
+        <EndExpressionSeparator>');</EndExpressionSeparator>
+        <FieldName>43GMLongitude</FieldName>
+      </Action>
+      
+      <Action>
+        <ActionType>ActionCommand</ActionType>
+        <Page>2</Page>
+        <CommandLine>Insert Advert</CommandLine>
+      </Action>
+
+    </ActionList>
+
+  </AgentDefinition>
+</Agent>

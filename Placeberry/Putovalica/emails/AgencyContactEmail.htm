@@ -1,0 +1,103 @@
+﻿<html>
+<head>
+    <title>Web contact form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        p, td
+        {
+            color: #595F5F;
+            font-weight: normal;
+            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <style type="text/css">
+        td.border
+        {
+            border: 1px solid #002E4D;
+        }
+    </style>
+</head>
+<body>
+    <table border="0" cellspacing="2" cellpadding="3" width="450">
+        <tr>
+            <td colspan="2" align="center" height="25" bgcolor="#EEEEEE" class="border">
+                <b>Kontakt</b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="10">
+            </td>
+        </tr>
+        <tr>
+            <td class="border" width="100">
+                <b>Ime i prezime</b>
+            </td>
+            <td class="border" width="350">
+                {name} &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td class="border">
+                <b>E-mail </b>
+            </td>
+            <td class="border">
+                {email} &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td class="border">
+                <b>Mobitel </b>
+            </td>
+            <td class="border">
+                {phone} &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td class="border">
+                <b>Broj osoba: </b>
+            </td>
+            <td class="border">
+                {capacity} &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="10">
+            </td>
+        </tr>
+        <tr>
+            <td class="border">
+                <b>Početak </b>
+            </td>
+            <td class="border">
+                {date_start} &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td class="border">
+                <b>Kraj </b>
+            </td>
+            <td class="border">
+                {date_end} &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="10">
+            </td>
+        </tr>
+        <tr>
+            <td class="border" colspan="2" bgcolor="#EEEEEE">
+                <b>Poruka </b>
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="border">
+                {message} &nbsp;
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
