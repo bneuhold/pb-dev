@@ -1,9 +1,0 @@
-D:\projekti-local\MRI\Placeberry\dev\SearchEngine\FuzzyStrings\bin\Debug\FuzzyStrings.dll
-D:\projekti-local\MRI\Placeberry\dev\SearchEngine\FuzzyStrings\bin\Debug\FuzzyStrings.pdb
-D:\projekti-local\MRI\Placeberry\dev\SearchEngine\FuzzyStrings\obj\Debug\ResolveAssemblyReference.cache
-D:\projekti-local\MRI\Placeberry\dev\SearchEngine\FuzzyStrings\obj\Debug\FuzzyStrings.dll
-D:\projekti-local\MRI\Placeberry\dev\SearchEngine\FuzzyStrings\obj\Debug\FuzzyStrings.pdb
-I:\MyGit\pb-dev\Placeberry\SearchEngine\FuzzyStrings\bin\Debug\FuzzyStrings.dll
-I:\MyGit\pb-dev\Placeberry\SearchEngine\FuzzyStrings\bin\Debug\FuzzyStrings.pdb
-I:\MyGit\pb-dev\Placeberry\SearchEngine\FuzzyStrings\obj\Debug\FuzzyStrings.dll
-I:\MyGit\pb-dev\Placeberry\SearchEngine\FuzzyStrings\obj\Debug\FuzzyStrings.pdb

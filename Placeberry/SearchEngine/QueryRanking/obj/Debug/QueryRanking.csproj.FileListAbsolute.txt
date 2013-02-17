@@ -1,2 +1,0 @@
-D:\projekti-local\MRI\Placeberry\dev\SearchEngine\QueryRanking\obj\Debug\ResolveAssemblyReference.cache
-I:\MyGit\pb-dev\Placeberry\SearchEngine\QueryRanking\obj\Debug\QueryRanking.csprojResolveAssemblyReference.cache

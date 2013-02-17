@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PicPreview.aspx.cs" Inherits="manage_PicPreview" %>

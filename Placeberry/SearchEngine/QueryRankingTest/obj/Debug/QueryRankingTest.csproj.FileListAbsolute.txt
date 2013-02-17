@@ -1,2 +1,0 @@
-D:\projekti-local\MRI\Placeberry\dev\SearchEngine\QueryRankingTest\obj\Debug\ResolveAssemblyReference.cache
-I:\MyGit\pb-dev\Placeberry\SearchEngine\QueryRankingTest\bin\Debug\QueryRankingTest.exe.config
