@@ -58,12 +58,14 @@
     <Compile Include="CapacitySimilarity.cs" />
     <Compile Include="DateSimilarity.cs" />
     <Compile Include="GeoSimilarity.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="LRUCache.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="PriceSimilarity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryRanker.cs" />
     <Compile Include="TextSimilarity.cs" />
+    <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,37 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Placeberry", "Placeberry", "{2A7B5F3E-D5E5-4B17-8779-B7681C384269}"
-	ProjectSection(WebsiteProperties) = preProject
-		SccProjectName = ""
-		SccAuxPath = ""
-		SccLocalPath = ""
-		SccProvider = ""
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
-		ProjectReferences = "{3C498118-626D-45F3-94D9-C39CA1AFF6FA}|LibGoogleWeather.dll;{BB558F9C-2617-4429-8AF6-6B88135EE72F}|LibWeather.dll;{c1c978bf-72a4-415a-9426-d1ea421b37cf}|CroatianAnalyzer.dll;{5205f383-faa7-4ca2-8d51-a5494a7abeae}|QueryRanking.dll;{29385A2D-EAC1-4777-BC01-C060C2002307}|FuzzyStrings.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/alpha.placeberry.com"
-		Debug.AspNetCompiler.PhysicalPath = "Placeberry\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\alpha.placeberry.com\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/alpha.placeberry.com"
-		Release.AspNetCompiler.PhysicalPath = "Placeberry\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\alpha.placeberry.com\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "11840"
-		VWDVirtualPath = "/"
-	EndProjectSection
-	ProjectSection(SvnOrigin) = preProject
-		@Keys = Enlist,Svn.Uri
-		Enlist = Required
-		Svn.Uri = Placeberry/
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{565D3529-DDDC-4FC4-8AC7-3595F70EE4AE}"
 	ProjectSection(SolutionItems) = preProject
 		Placeberry\Libraries\UrlRewritingNet.UrlRewriter.dll = Placeberry\Libraries\UrlRewritingNet.UrlRewriter.dll
@@ -51,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibGoogleWeather", "LibGoog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaceberryCrawlerConsole", "PlaceberryCrawlerConsole\PlaceberryCrawlerConsole.csproj", "{56CC8233-9A9A-4018-91A9-C887647D8776}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Putovalica", "Putovalica", "{3411A391-BB9C-4AEA-AE5B-A426026BF99F}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Putovalica", "Putovalica\", "{3411A391-BB9C-4AEA-AE5B-A426026BF99F}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/Putovalica"
@@ -89,6 +58,32 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryRankingTest", "SearchE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migration", "SearchEngine\Migration\Migration.csproj", "{33431EF5-AB5E-47A5-BDD3-87807427942C}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "localhost", "http://localhost:11840", "{22B405FD-6B06-4421-AC4E-EB104A29A024}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		ProjectReferences = "{3C498118-626D-45F3-94D9-C39CA1AFF6FA}|LibGoogleWeather.dll;{BB558F9C-2617-4429-8AF6-6B88135EE72F}|LibWeather.dll;{c1c978bf-72a4-415a-9426-d1ea421b37cf}|CroatianAnalyzer.dll;{5205f383-faa7-4ca2-8d51-a5494a7abeae}|QueryRanking.dll;{29385A2D-EAC1-4777-BC01-C060C2002307}|FuzzyStrings.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/alpha.placeberry.com"
+		Debug.AspNetCompiler.PhysicalPath = "Placeberry\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\alpha.placeberry.com\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/alpha.placeberry.com"
+		Release.AspNetCompiler.PhysicalPath = "Placeberry\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\alpha.placeberry.com\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Placeberry\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,16 +94,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
-		{2A7B5F3E-D5E5-4B17-8779-B7681C384269}.Release|x86.ActiveCfg = Debug|Any CPU
 		{BB558F9C-2617-4429-8AF6-6B88135EE72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB558F9C-2617-4429-8AF6-6B88135EE72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB558F9C-2617-4429-8AF6-6B88135EE72F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -255,6 +240,16 @@ Global
 		{33431EF5-AB5E-47A5-BDD3-87807427942C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{33431EF5-AB5E-47A5-BDD3-87807427942C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{33431EF5-AB5E-47A5-BDD3-87807427942C}.Release|x86.ActiveCfg = Release|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{22B405FD-6B06-4421-AC4E-EB104A29A024}.Release|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
