@@ -1,0 +1,19 @@
+﻿
+fieldset.editor{border:solid 2px #006F9A;padding:10px;}
+fieldset.editor legend{color:#006F9A;font-size:14px;padding:0 10px;}
+fieldset.editor .form-editor{display:table;font-size:12px;}
+fieldset.editor .form-editor .form-row{display:table-row;}
+fieldset.editor .form-editor .form-row .form-cell{display:table-cell;font-weight:bold;padding:5px;}
+fieldset.editor .form-editor .form-row .form-cell.label{width:150px;padding-right:10px;color:#006F9A;}
+fieldset.editor .form-editor .form-row .close-row{display:none;}
+
+
+.login-wrapper{}
+.login-wrapper{margin: 130px auto;width:400px;}
+.login-wrapper fieldset.editor{border:solid 3px #006F9A;}
+.login-wrapper fieldset.editor .form-editor .form-row .form-cell.label{width:100px;}
+
+.login-wrapper .register-wrapper{margin-top:20px;font-size:14px;}
+.login-wrapper .register-wrapper a{font-weight:bold;}
+
+

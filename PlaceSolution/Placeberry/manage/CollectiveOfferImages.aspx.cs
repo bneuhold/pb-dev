@@ -181,7 +181,7 @@ public partial class manage_CollectiveOfferImages : System.Web.UI.Page
             (OFFER_IMAGE_UPLOAD_PATH.Last() == '/' ? OFFER_IMAGE_UPLOAD_PATH : OFFER_IMAGE_UPLOAD_PATH + "/"), ext);
 
             string saveLocation = Server.MapPath(newImg.Src);
-            if (!Directory.Exists(saveLocation)) Directory.CreateDirectory(Path.GetDirectoryName(saveLocation));
+            if (!System.IO.Directory.Exists(saveLocation)) System.IO.Directory.CreateDirectory(Path.GetDirectoryName(saveLocation));
 
             File.WriteAllBytes(saveLocation, imgRes);
 

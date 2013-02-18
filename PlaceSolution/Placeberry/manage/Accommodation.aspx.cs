@@ -844,7 +844,7 @@ public partial class manage_Accommodation : System.Web.UI.Page
             dc.SubmitChanges();
 
             string saveLocation = Server.MapPath(srcLocation);
-            if (!Directory.Exists(saveLocation)) Directory.CreateDirectory(Path.GetDirectoryName(saveLocation));
+            if (!System.IO.Directory.Exists(saveLocation)) System.IO.Directory.CreateDirectory(Path.GetDirectoryName(saveLocation));
 
             File.WriteAllBytes(saveLocation, imgRes);
 

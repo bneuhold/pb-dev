@@ -274,7 +274,7 @@ public partial class Agency : System.Web.UI.Page
                 byte[] imgRes = resizer.Resize(file);
 
 
-                if (!Directory.Exists(saveLocation)) Directory.CreateDirectory(Path.GetDirectoryName(saveLocation));
+                if (!System.IO.Directory.Exists(saveLocation)) System.IO.Directory.CreateDirectory(Path.GetDirectoryName(saveLocation));
                 File.WriteAllBytes(saveLocation, imgRes);
                 
 

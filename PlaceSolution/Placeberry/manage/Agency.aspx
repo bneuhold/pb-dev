@@ -1,26 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterHome.master" AutoEventWireup="true" CodeFile="Agency.aspx.cs" Inherits="Agency" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterManage.master" AutoEventWireup="true" CodeFile="Agency.aspx.cs" Inherits="Agency" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <style type="text/css">
-        .selectedrow
-        {
-            background-color:lime;
-        }
-        .ui-autocomplete-loading
-        {
-            background: white url('/resources/scripts/jqueriui/images/ui-anim_basic_16x16.gif') right center no-repeat;
-        }
-        .autocomplete
-        {
-            width: 25em;
-        }
-    </style>
-
-    <script src="/resources/scripts/jqueriui/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
-    <link href="/resources/scripts/jqueriui/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
-
-
-    <script type="text/javascript">
+    <script type="text/javascript" language="javascript">
 
         $(document).ready(function () {
 
@@ -105,32 +86,75 @@
 
     <asp:MultiView ID="mvwContainer" runat="server" ActiveViewIndex="0">
         <asp:View ID="vwRead" runat="server" EnableViewState="false">
-
-            <h1><asp:Literal ID="ltlAgency" runat="server">Agencija</asp:Literal></h1>          
-            <a href="" id="aEdit" runat="server">Uređivanje</a>
+            <div class="header-bar"><asp:Literal ID="ltlAgency" runat="server">Agencija</asp:Literal></div>
+            
+            <div class="in-content top-m">         
+            <a href="" id="aEdit" class="button edit" runat="server">Uređivanje</a>
             <br />
             <img id="imgLogoR" runat="server" src="" alt="" />
             <br />
 
-
-
-            <asp:Literal ID="ltlPrivate" runat="server">Agencija/Privatna osoba</asp:Literal>
-            <br />
-            <asp:Literal ID="ltlCountry" runat="server">Drzava</asp:Literal>
-            <br />
-            <asp:Literal ID="ltlCity" runat="server">Grad</asp:Literal>
-            <br />
-            <asp:Literal ID="ltlStreet" runat="server">Ulica</asp:Literal>
-            <br />
-            <asp:Literal ID="ltlContactPhone" runat="server">099 555 6666</asp:Literal>
-            <br />
-            <asp:Literal ID="ltlEmail" runat="server">email@email.com</asp:Literal>
-            <br />
-            <asp:Literal ID="ltlUrlWebsite" runat="server">www.website.com</asp:Literal>
-            <br />
-            <asp:Literal ID="ltlLanguage" runat="server">Language</asp:Literal>
-            <br />
-
+            <fieldset class="editor basic-info ui-corner-all">
+                <legend>Podaci o korisniku</legend>
+                <div class="form-editor">
+                    <div class="form-row">
+                        <div class="form-cell label">Tip</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlPrivate" runat="server">Agencija/Privatna osoba</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Država</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlCountry" runat="server">Drzava</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Grad</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlCity" runat="server">Grad</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Ulica</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlStreet" runat="server">Ulica</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Telefon</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlContactPhone" runat="server">099 555 6666</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">E-mail</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlEmail" runat="server">email@email.com</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Web stranica</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlUrlWebsite" runat="server">www.website.com</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Jezik</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlLanguage" runat="server">Language</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                </div>
+            </fieldset>
             <h2>Smještaji</h2>
             <asp:Repeater ID="repAccommodation" runat="server">
                 <HeaderTemplate>
@@ -152,6 +176,8 @@
             <br />
             <a href="" id="aBoking" runat="server">Pregled rezervacija</a>
             <br />
+
+            </div>
 
         </asp:View>
 
@@ -243,8 +269,8 @@
     <br />
     <br />
 
-    Povratak na <a href="/manage/Customer.aspx">korisničke stranice</a>
-    <br />
-    <br />
+
+    <a href="/manage/Customer.aspx" class="customer-link button-header-back ui-corner-all">korisničke stranice</a>
+
 </asp:Content>
 
