@@ -138,7 +138,7 @@ public partial class Agency : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            tbxName.Text = agency.Name;
+            tbxName.Text= lHeaderEdit.Text = agency.Name;
             tbxCountry.Text = agency.Country;
             tbxCity.Text = agency.City;
             tbxStreet.Text = agency.Address;

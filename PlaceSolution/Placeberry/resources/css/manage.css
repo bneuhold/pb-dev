@@ -1,13 +1,19 @@
 ﻿
 /********************************* EDITOR ***********************************/
+.action-bar{padding:5px 0px;}
+.action-bar a{font-size:13px;}
+.action-bar .button{background: #EFF3F3;color: #333;}
 
 fieldset.editor{border:solid 2px #006F9A;padding:10px;}
 fieldset.editor legend{color:#006F9A;font-size:14px;padding:0 10px;}
 fieldset.editor .form-editor{display:table;font-size:12px;}
 fieldset.editor .form-editor .form-row{display:table-row;}
-fieldset.editor .form-editor .form-row .form-cell{display:table-cell;font-weight:bold;padding:5px;}
+fieldset.editor .form-editor .form-row .form-cell{display:table-cell;font-weight:bold;padding:5px;vertical-align:middle;}
 fieldset.editor .form-editor .form-row .form-cell.label{width:150px;padding-right:10px;color:#006F9A;}
 fieldset.editor .form-editor .form-row .close-row{display:none;}
+fieldset.editor .edit-button{background:#006F9A;color:#fff;font-size:13px;}
+fieldset.editor .save-button{background:#749E0C;color:#fff;font-size:13px;}
+fieldset.editor .action-bar {padding:5px 5px 5px 160px;}
 .basic-info{width:400px;}
 
 
@@ -16,6 +22,12 @@ fieldset.editor .form-editor .form-row .close-row{display:none;}
 .manage-wrapper .header-bar{padding:20px;border-bottom:solid 1px #6ABFE0;text-align:center;background-color:#87D6F5;color:#006F9A;font-weight:bold;font-size:20px;position:absolute;top:-9px;left:0px;right:0px;}
 .manage-wrapper .in-content{padding:0 20px;}
 .manage-wrapper .top-m{margin-top:20px;}
+.manage-wrapper .bottom-m{margin-bottom:20px;}
+.manage-wrapper .to-left{float:left;}
+.manage-wrapper .on-right{margin-left:20px;}
+
+.manage-wrapper .accomodation-list-wrapper{width:400px;padding-top:5px}
+.manage-wrapper .accomodation-list-wrapper .title{}
 
 .manage-wrapper .button-header-back{position:absolute;top: 5px;left: 20px;padding: 8px 8px 8px 30px;border:solid 1px #ccc;background: #f6f6f6 url(../images/back-arrow.png) 5px 50% no-repeat;color: #515151;font-size: 11px;text-decoration: none;}
 .manage-wrapper .button-header-back:hover{background-color:#fff;}
@@ -24,9 +36,9 @@ fieldset.editor .form-editor .form-row .close-row{display:none;}
 .super-admin-options ul li{margin:10px 0px;}
 
 .list-wrapper{float:left;}
-.list-wrapper .title{padding:0px 15px;}
-.list-wrapper .link-list{padding:10px;}
-.list-wrapper .link-list .sub-item{margin:5px 0;padding:5px;border-top:solid 1px #ccc;}
+.list-wrapper .title{padding:10px 15px;background:#006F9A;color:#fff;}
+.list-wrapper .link-list{padding:0 0px;}
+.list-wrapper .link-list .sub-item{margin: 0px 0 0px 0;padding:5px 15px 10px 15px;border-bottom:solid 1px #ccc;}
 .list-wrapper .link-list .sub-item .item-title{font-weight:bold;}
 .list-wrapper .link-list .sub-item .item-content{color:#ccc;}
 .clearfix{clear:both;}
