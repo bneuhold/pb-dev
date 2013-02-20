@@ -86,7 +86,7 @@
 
     <asp:MultiView ID="mvwContainer" runat="server" ActiveViewIndex="0">
         <asp:View ID="vwRead" runat="server" EnableViewState="false">
-            <div class="header-bar"><asp:Literal ID="ltlAgency" runat="server">Agencija</asp:Literal></div>
+            <div class="header-bar">Agencija: <asp:Literal ID="ltlAgency" runat="server">Agencija</asp:Literal></div>
             
             <div class="in-content top-m">         
 
@@ -184,7 +184,7 @@
         </asp:View>
 
         <asp:View ID="vwNewEdit" runat="server">
-            <div class="header-bar"><asp:Literal ID="lHeaderEdit" runat="server">Agencija</asp:Literal></div>
+            <div class="header-bar">Agencija: <asp:Literal ID="lHeaderEdit" runat="server">Agencija</asp:Literal></div>
             <div class="in-content top-m">
                 <fieldset class="editor basic-info ui-corner-all">
             <legend id="hAgency" runat="server">Uređivanje agencije|Nova agencija</legend>
@@ -317,14 +317,12 @@
         </asp:View>
     </asp:MultiView>
             
-    <br />
+    
     <asp:Literal ID="ltlStatus" runat="server" EnableViewState="false"></asp:Literal>
-    <br />
-    <br />
 
-    <a id="aAgencyPage" href="" runat="server" target="_blank">Pregled stranice agencije</a>
-    <br />
-    <br />
+    <div class="in-content top-m bottom-m">
+        <a id="aAgencyPage" href="" runat="server" class="agency-link" target="_blank">Pregled stranice agencije</a>
+    </div>
 
 
     <a href="/manage/Customer.aspx" class="customer-link button-header-back ui-corner-all">korisničke stranice</a>

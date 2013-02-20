@@ -11,8 +11,10 @@ fieldset.editor .form-editor .form-row{display:table-row;}
 fieldset.editor .form-editor .form-row .form-cell{display:table-cell;font-weight:bold;padding:5px;vertical-align:middle;}
 fieldset.editor .form-editor .form-row .form-cell.label{width:150px;padding-right:10px;color:#006F9A;}
 fieldset.editor .form-editor .form-row .close-row{display:none;}
+fieldset.editor input[type='text'], fieldset.editor textarea, fieldset.editor select{padding:3px 5px;}
 fieldset.editor .edit-button{background:#006F9A;color:#fff;font-size:13px;}
 fieldset.editor .save-button{background:#749E0C;color:#fff;font-size:13px;}
+fieldset.editor .delete-button{background:#BF1E2D;color:#fff;font-size:13px;}
 fieldset.editor .action-bar {padding:5px 5px 5px 160px;}
 .basic-info{width:400px;}
 

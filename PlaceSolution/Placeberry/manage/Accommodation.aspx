@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterHome.master" AutoEventWireup="true" CodeFile="Accommodation.aspx.cs" Inherits="manage_Accommodation"  %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterManage.master" AutoEventWireup="true" CodeFile="Accommodation.aspx.cs" Inherits="manage_Accommodation"  %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
@@ -47,26 +47,44 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
-    <h1><a id="aAccomm" runat="server" href="">Naziv smještaja</a></h1>
-
-
+    <div class="header-bar">Smještaj: <a id="aAccomm" runat="server" href="">Naziv smještaja</a></div>
+    <div class="in-content top-m">  
     <asp:MultiView ID="mvwAccommodation" runat="server" ActiveViewIndex="0">
         <asp:View ID="vwRead" runat="server" EnableViewState="false">
             
-            <h2><asp:Literal ID="ltlAgency" runat="server">Naziv agencije</asp:Literal></h2>
+            <fieldset class="editor basic-info ui-corner-all to-left">
+                <legend>Podaci o smještaju</legend>
+                <div class="form-editor">
+                    <div class="form-row">
+                        <div class="form-cell label">Agencija</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlAgency" runat="server">Naziv agencije</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Tip smještaja</div>
+                        <div class="form-cell value">
+                            <asp:Literal ID="ltlType" runat="server">Tip smještaja</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Lokacija</div>
+                        <div class="form-cell value">
+                           <asp:Literal ID="ltlCityRegionCountry" runat="server">Grad, Podregija, Regija, Država</asp:Literal>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                </div>
+                <div class="action-bar">
+                    <a id="aEdit" runat="server"  class="edit-button button" href="">Uređivanje</a>
+
+                    <a id="aDelete" runat="server" class="delete-button button" onserverclick="aDelete_Click">Brisanje</a>
+                </div>
+            </fieldset>
             
-            <a id="aEdit" runat="server" href="">Uređivanje</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-            <a id="aDelete" runat="server" onserverclick="aDelete_Click">Brisanje</a>
-            <br />
 
-            <asp:Literal ID="ltlType" runat="server">Tip smještaja</asp:Literal>
-            <br />
-
-            <asp:Literal ID="ltlCityRegionCountry" runat="server">Grad, Podregija, Regija, Država</asp:Literal>
-            <br />
-
-            <br />
             <a id="aImages" runat="server" href="">Dodaj ili uredi slike</a>
             <br />
             <a id="aPrices" runat="server" href="">Dodaj ili uredi cijenike</a>
@@ -79,39 +97,116 @@
         </asp:View>
 
         <asp:View ID="vwNewEdit" runat="server">
-            <h1 runat="server" id="hNewEdit">Uređivanje smještaja|Unos smještaja</h1>
-            <br /><br />
+            
+            
+            <fieldset class="editor basic-info ui-corner-all to-left">
+                <legend runat="server" id="hNewEdit">Uređivanje smještaja|Unos smještaja</legend>
+                <div class="form-editor">
+                    <div class="form-row">
+                        <div class="form-cell label">Naziv</div>
+                        <div class="form-cell value">
+                            <asp:TextBox ID="tbxName" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="revName" runat="server" 
+                            ControlToValidate="tbxName" 
+                            ErrorMessage="*" 
+                            ValidationGroup="newedit" />
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Tip smještaja</div>
+                        <div class="form-cell value">
+                            <asp:DropDownList ID="ddlType" runat="server"></asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="revType" runat="server" 
+                            ControlToValidate="ddlType" 
+                            ErrorMessage="*"
+                            ValidationGroup="newedit" 
+                            InitialValue="-1" />
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">
+                            <asp:Literal ID="ltlCountry" Text="Država" runat="server" /> 
+                        </div>
+                        <div class="form-cell value">
+                            <asp:DropDownList ID="ddlCountry" runat="server" 
+                                AutoPostBack="true"
+                                OnSelectedIndexChanged="ddlCountry_SelectedIndexChanged">
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                ErrorMessage="*" 
+                                ControlToValidate="ddlCountry"
+                                ValidationGroup="newedit"  
+                                InitialValue="-1" />
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">
+                        
+                        
+                        </div>
+                        <div class="form-cell value">
+                            
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Kapacitet</div>
+                        <div class="form-cell value">
+                            <asp:TextBox ID="tbxCapacity" runat="server" ToolTip="primjer unosa: 4, 4+1, 4-5" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                            ControlToValidate="tbxCapacity" 
+                            ErrorMessage="*" 
+                            ValidationGroup="newedit" />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                            ControlToValidate="tbxCapacity"
+                            ErrorMessage="Neispravan unos! Unjeti broj osoba, npr: '5' ili '5-6' ili '5+1'"
+                            ValidationExpression="^\s*([1-9][0-9]*|[1-9][0-9]*\s*[-+]\s*[1-9][0-9]*)\s*$"
+                            />
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Adresa</div>
+                        <div class="form-cell value">
+                            <asp:TextBox ID="tbxAdress" runat="server" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                    ControlToValidate="tbxAdress" 
+                                    ErrorMessage="*"
+                                    ValidationGroup="newedit">
+                            </asp:RequiredFieldValidator>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label"></div>
+                        <div class="form-cell value">
+                            
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Kućni ljubimci</div>
+                        <div class="form-cell value">
+                            <asp:CheckBox ID="chbxPets" Text="Dozvoljeni" runat="server" Checked="false" />
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label"></div>
+                        <div class="form-cell value">
+                            
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+
+                </div>
+            </fieldset>
+
             <div>                
-                Naziv
-                <asp:TextBox ID="tbxName" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="revName" runat="server" 
-                    ControlToValidate="tbxName" 
-                    ErrorMessage="*" 
-                    ValidationGroup="newedit" />
-                
-                <br /><br />
-                Tip smještaja
-                <asp:DropDownList ID="ddlType" runat="server"></asp:DropDownList>
-                <asp:RequiredFieldValidator ID="revType" runat="server" 
-                ControlToValidate="ddlType" 
-                ErrorMessage="*"
-                ValidationGroup="newedit" 
-                InitialValue="-1" />
 
-
-                <br /><br />
-                <asp:Literal ID="ltlCountry" Text="Država" runat="server" /> 
-                <asp:DropDownList ID="ddlCountry" runat="server" 
-                AutoPostBack="true"
-                OnSelectedIndexChanged="ddlCountry_SelectedIndexChanged">
-                </asp:DropDownList>
-                <asp:RequiredFieldValidator runat="server"
-                ErrorMessage="*" 
-                ControlToValidate="ddlCountry"
-                ValidationGroup="newedit"  
-                InitialValue="-1" />
-
-                <br /><br />
 
                 <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
                 </asp:ToolkitScriptManager>
@@ -198,35 +293,6 @@
                     </asp:View>
                 </asp:MultiView>
             
-                <br /><br />
-
-                <h3>Kapacitet</h3>
-                <asp:TextBox ID="tbxCapacity" runat="server" ToolTip="primjer unosa: 4, 4+1, 4-5" />
-                    <asp:RequiredFieldValidator runat="server" 
-                    ControlToValidate="tbxCapacity" 
-                    ErrorMessage="*" 
-                    ValidationGroup="newedit" />
-                    <asp:RegularExpressionValidator runat="server" 
-                    ControlToValidate="tbxCapacity"
-                    ErrorMessage="Neispravan unos! Unjeti broj osoba, npr: '5' ili '5-6' ili '5+1'"
-                    ValidationExpression="^\s*([1-9][0-9]*|[1-9][0-9]*\s*[-+]\s*[1-9][0-9]*)\s*$"
-                    />
-
-                <br /><br />
-
-                <h3>Adresa</h3>
-                <asp:TextBox ID="tbxAdress" runat="server" />
-                    <asp:RequiredFieldValidator runat="server" 
-                            ControlToValidate="tbxAdress" 
-                            ErrorMessage="*"
-                            ValidationGroup="newedit">
-                    </asp:RequiredFieldValidator>
-
-
-                <h3>Kućni ljubimci</h3>
-                <asp:CheckBox ID="chbxPets" Text="Dozvoljeni" runat="server" Checked="false" />
-
-                <br /><br />
 
                 <asp:MultiView ID="mvwDescriptions" runat="server" ActiveViewIndex="0">
                     <asp:View ID="vwNewDescription" runat="server">                   
@@ -474,12 +540,11 @@
         </asp:View>
     </asp:MultiView>
 
-
+    </div>
     <br />
     <asp:Literal ID="ltlStatus" runat="server"></asp:Literal>
-    <br />
-    <br />
-    Povratak na <a id="aBackToAgency" runat="server" href="">stranicu agencije</a>
+
+    <a id="aBackToAgency" runat="server" class="agency-link button-header-back ui-corner-all" href="">Natrag na agenciju</a>
     
 </asp:Content>
 
