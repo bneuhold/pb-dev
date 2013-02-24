@@ -305,7 +305,7 @@ div.accomm_list_title
 
 div.accomm_list
 {
-    float:left;
+    /*float:left;*/
 }
 
 div.accomm_list li

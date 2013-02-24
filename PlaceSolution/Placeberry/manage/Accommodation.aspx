@@ -9,7 +9,6 @@
     <link href="/resources/scripts/jcrop/jquery.Jcrop.css" rel="stylesheet" type="text/css" />
     <link href="/resources/scripts/jqueriui/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
 
-    
     <script type="text/javascript">
 
         //datepicker i jCrop
@@ -35,6 +34,16 @@
                 onSelect: showCoords,
                 addClass: 'jcrop-dark',
                 setSelect: [0 , 0, 2000, 2000]
+            });
+
+            $("#priceperiod input[type=radio]").bind("change", function () {
+                var value = $(this).val();
+                if (value == "wholeyear") {
+                    $("#enterdates").hide();
+                }
+                else if (value == "specificperiod") {
+                    $("#enterdates").show();
+                }
             });
         });
 
@@ -84,15 +93,13 @@
                 </div>
             </fieldset>
             
-
-            <a id="aImages" runat="server" href="">Dodaj ili uredi slike</a>
-            <br />
-            <a id="aPrices" runat="server" href="">Dodaj ili uredi cijenike</a>
-            <br />
-
-            <br />
-            <asp:Button ID="btnPublishAccomAdvert" Text="Publish" runat="server" 
+            <div class="action-bar on-right">
+                <asp:LinkButton ID="btnPublishAccomAdvert" Text="Publish" runat="server" CssClass="save-button button"
                 onclick="btnPublishAccomAdvert_Click" />
+                <a id="aImages" runat="server" class="button" href="">Dodaj ili uredi slike</a>
+                <a id="aPrices" runat="server" class="button" href="">Dodaj ili uredi cijenike</a>
+            </div>
+            
     
         </asp:View>
 
@@ -202,10 +209,7 @@
                         <div class="close-row"></div>
                     </div>
 
-                </div>
-            </fieldset>
-
-            <div>                
+                
 
 
                 <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
@@ -213,30 +217,44 @@
                 <asp:MultiView ID="mvwCityEntry" runat="server" ActiveViewIndex="0">
 
                     <asp:View ID="vwCityAuto" runat="server">
-                        Grad
-                        <asp:DropDownList ID="ddlCityRegion" runat="server"></asp:DropDownList>
-                        <asp:RequiredFieldValidator runat="server"
-                        ErrorMessage="*" 
-                        ControlToValidate="ddlCityRegion"
-                        ValidationGroup="autocity" 
-                        InitialValue="-1" />
+                        
+                        <div class="form-row">
+                            <div class="form-cell label">Grad</div>
+                            <div class="form-cell value">
+                                <asp:DropDownList ID="ddlCityRegion" runat="server"></asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server"
+                                ErrorMessage="*" 
+                                ControlToValidate="ddlCityRegion"
+                                ValidationGroup="autocity" 
+                                InitialValue="-1" />
 
-                        <br />
-                    
-                        Grada nema na popisu?
-                        <asp:LinkButton ID="lbtnManualEntry" runat="server" onclick="lbtnManualEntry_Click">Unesite ga!</asp:LinkButton>                    
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-cell label">
+                                <div class="line-holder">
+                                    <div class="line subtext">
+                                       Grada nema na popisu? <asp:LinkButton ID="lbtnManualEntry" runat="server" onclick="lbtnManualEntry_Click">Unesite ga!</asp:LinkButton> 
+                                    </div>
+                                </div>
 
+                            </div>
+                            <div class="form-cell value">
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        
+                        
                     </asp:View>
 
                     <asp:View ID="vwCityManual" runat="server">
 
-                        <table>
-                            <tr>
-                                <td>
-                                    Region:
-                                </td>
-                                <td>
-                                    <asp:ComboBox ID="cbxRegion" runat="server" 
+                        <div class="form-row">
+                            <div class="form-cell label">Region</div>
+                            <div class="form-cell value">
+                                <asp:ComboBox ID="cbxRegion" runat="server" 
                                     AutoCompleteMode="SuggestAppend" 
                                     AutoPostBack="true" 
                                     OnTextChanged="cbxRegion_TextChanged"></asp:ComboBox>
@@ -244,39 +262,36 @@
                                     ControlToValidate="cbxRegion" 
                                     ErrorMessage="*"
                                     ValidationGroup="manualcity"
-                                    InitialValue="-1" />                                
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Subregion:
-                                </td>
-                                <td>
-                                    <asp:ComboBox ID="cbxSubregion" runat="server" 
+                                    InitialValue="-1" />   
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label">Subregion</div>
+                            <div class="form-cell value">
+                                <asp:ComboBox ID="cbxSubregion" runat="server" 
                                     AutoCompleteMode="SuggestAppend" 
                                     AutoPostBack="true" 
                                     OnTextChanged="cbxSubregion_TextChanged">
                                     </asp:ComboBox>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Island:
-                                </td>
-                                <td>
-                                    <asp:ComboBox ID="cbxIsland" runat="server" 
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label">Island</div>
+                            <div class="form-cell value">
+                                <asp:ComboBox ID="cbxIsland" runat="server" 
                                     AutoCompleteMode="SuggestAppend" 
                                     AutoPostBack="true" 
                                     OnTextChanged="cbxIsland_TextChanged">
                                     </asp:ComboBox>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    City:
-                                </td>
-                                <td>
-                                    <asp:ComboBox ID="cbxCity" runat="server" 
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label">City</div>
+                            <div class="form-cell value">
+                                <asp:ComboBox ID="cbxCity" runat="server" 
                                     AutoCompleteMode="SuggestAppend" 
                                     AutoPostBack="false" 
                                     OnTextChanged="cbxCity_TextChanged">
@@ -286,9 +301,9 @@
                                     ErrorMessage="*"
                                     ValidationGroup="manualcity"
                                     InitialValue="-1" />
-                                </td>
-                            </tr>
-                        </table>
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
 
                     </asp:View>
                 </asp:MultiView>
@@ -296,16 +311,28 @@
 
                 <asp:MultiView ID="mvwDescriptions" runat="server" ActiveViewIndex="0">
                     <asp:View ID="vwNewDescription" runat="server">                   
-
-                        <h3>Opis na jeziku</h3>
-                        <asp:RadioButton ID="rbtnDefaultDescLanguage" runat="server" />
-                        <asp:TextBox ID="tbxNewDefaultLangDescription" runat="server" TextMode="MultiLine" />
-                        <asp:RequiredFieldValidator ID="revNewDescription" runat="server" 
-                                    ControlToValidate="tbxNewDefaultLangDescription" 
-                                    ErrorMessage="*"
-                                    ValidationGroup="newedit">
-                        </asp:RequiredFieldValidator>
-
+                    
+                        <div class="form-row">
+                            <div class="form-cell label">Opis na jeziku
+                            <asp:RadioButton ID="rbtnDefaultDescLanguage" runat="server" />
+                            </div>
+                            <div class="form-cell value">
+                                <asp:TextBox ID="tbxNewDefaultLangDescription" runat="server" TextMode="MultiLine" />
+                                <asp:RequiredFieldValidator ID="revNewDescription" runat="server" 
+                                            ControlToValidate="tbxNewDefaultLangDescription" 
+                                            ErrorMessage="*"
+                                            ValidationGroup="newedit">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label"></div>
+                            <div class="form-cell value">
+                            
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
     <%--                    <asp:RadioButtonList ID="rblLanguages" runat="server" 
                             DataSourceID="ldsLanguages" DataTextField="Title" DataValueField="Id">
                         </asp:RadioButtonList>
@@ -318,42 +345,77 @@
                     </asp:View>
                     <asp:View ID="vwEditDescription" runat="server">
                     
-                        <h2>Opisi</h2>
+                        <div class="form-row separator">
+                            <div class="form-cell label">Opisi</div>
+                            <div class="form-cell value">
+                            
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        
+                        
+                        
 
                         <asp:Repeater ID="repDescriptions" runat="server">
                             <ItemTemplate>
-                                <h3><%# Eval("Language.Title")%></h3>
-                                <asp:TextBox runat="server" Text='<%# Eval("Description") %>' />
-                                <asp:LinkButton runat="server" 
-                                OnCommand="lbtnDeleteDescription_Command"
-                                CommandName="deletedescription" 
-                                CommandArgument='<%# Eval("AccommodationId") + "," + Eval("LanguageId")%>'
-                                Text="Briši">
-                                </asp:LinkButton>                      
+                                
+                                <div class="form-row">
+                                    <div class="form-cell label"><%# Eval("Language.Title")%></div>
+                                    <div class="form-cell value">
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Eval("Description") %>' />
+                                        <asp:LinkButton ID="LinkButton1" runat="server" 
+                                        OnCommand="lbtnDeleteDescription_Command"
+                                        CommandName="deletedescription" 
+                                        CommandArgument='<%# Eval("AccommodationId") + "," + Eval("LanguageId")%>'
+                                        Text="Briši">
+                                        </asp:LinkButton>    
+                                    </div>
+                                    <div class="close-row"></div>
+                                </div>                
                             </ItemTemplate>
                         </asp:Repeater>
+                        <div class="form-row">
+                            <div class="form-cell label">
+                                <div class="line-holder">
+                                    <div class="line">
+                                        Dodaj opis na drugom jeziku
+                                    </div>
 
-                        <p>
-                            Dodaj opis na drugom jeziku 
-                            <asp:DropDownList ID= "ddlAddDescLangs" runat="server">
-                            </asp:DropDownList>
+                                </div>
+                            </div>
+                            <div class="form-cell value">
+                            
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label">
+                                <asp:DropDownList ID= "ddlAddDescLangs" runat="server">
+                                </asp:DropDownList>
+                            </div>
+                            <div class="form-cell value">
+                                <asp:TextBox ID="tbxAddDescription" runat="server" TextMode="MultiLine" />
+                                <asp:RequiredFieldValidator ID="rfvAddDescription" runat="server" 
+                                ControlToValidate="tbxAddDescription" 
+                                ErrorMessage="*"
+                                ValidationGroup="adddescription">
+                                </asp:RequiredFieldValidator>
 
-                            <asp:TextBox ID="tbxAddDescription" runat="server" TextMode="MultiLine" />
-                            <asp:RequiredFieldValidator ID="rfvAddDescription" runat="server" 
-                            ControlToValidate="tbxAddDescription" 
-                            ErrorMessage="*"
-                            ValidationGroup="adddescription">
-                            </asp:RequiredFieldValidator>
-
-                            <asp:Button ID="btnAddDescription" Text="Dodaj" runat="server" 
-                                onclick="btnAddDescription_Click" ValidationGroup="adddescription" />
-                        </p>
-
-
+                                <asp:LinkButton ID="btnAddDescription" Text="Dodaj" runat="server"
+                                    onclick="btnAddDescription_Click" ValidationGroup="adddescription" />
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
                     </asp:View>
                 </asp:MultiView>
+            
+                </div>
+                <div class="action-bar">
+                    <asp:LinkButton ID="btnSave" runat="server" Text="Spremi promjene"  CommandName="" CssClass="save-button button"
+                        oncommand="btnSave_Command" ValidationGroup="newedit" />
+                </div>
+            </fieldset>
 
-            </div>
             <div style="float:left;">
                 <div style="width:500px; height:400px;">
                     <div id="map_canvas" style="width:100%; height:100%;">
@@ -362,179 +424,240 @@
                 </div>
             </div>
             <div style="clear:both"></div>
-
-            <br /><br />
-            <asp:Button ID="btnSave" runat="server" Text="Spremi promjene"  CommandName="" 
-                        oncommand="btnSave_Command" ValidationGroup="newedit" />
-
         </asp:View>
 
         <asp:View ID="vwImages" runat="server">
-        <h1>Slike smještaja</h1>
-        <h2>Dodaj sliku</h2>
-            <h3>Naziv</h3>
-            <asp:TextBox ID="tbxAddAccomImageTitle" runat="server" Text="" />
-            <asp:RequiredFieldValidator ErrorMessage="*" ControlToValidate="tbxAddAccomImageTitle" runat="server" ValidationGroup="uploadimage" />
-            <h3>Opis</h3>
-            <asp:TextBox ID="tbxAddAccomImageDescription" runat="server" Text="" />
-            <asp:RequiredFieldValidator ErrorMessage="*" ControlToValidate="tbxAddAccomImageDescription" runat="server" ValidationGroup="uploadimage" />
-            <h3>Odaberi sliku</h3>
-            <asp:FileUpload ID="fuAddAccommImage" runat="server" />
-            <asp:Button ID="btnUploadAccommImagePreview" Text="Upload" runat="server" 
-                onclick="btnUploadAccommImagePreview_Click" />
-            <asp:RequiredFieldValidator ID="rfvAddAccommImage" runat="server" ErrorMessage="*" ControlToValidate="fuAddAccommImage" ValidationGroup="uploadimage" />
-            <div id="preview">
-                <img id="imgThumb"  src="" alt="" runat="server" visible="false" />
-                <asp:HiddenField ID="hfCrop" runat="server" Value="" />
-            </div>
+        
+            <fieldset class="editor basic-info ui-corner-all to-left">
+                <legend runat="server" id="Legend1">Dodavanje slike na smještaj</legend>
+                <div class="form-editor">
+                    <div class="form-row">
+                        <div class="form-cell label">Naziv</div>
+                        <div class="form-cell value">
+                            <asp:TextBox ID="tbxAddAccomImageTitle" runat="server" Text="" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" ErrorMessage="*" ControlToValidate="tbxAddAccomImageTitle" runat="server" ValidationGroup="uploadimage" />
+                        </div>
+                        <div class="close-row"></div>
+                    </div>  
+                    <div class="form-row">
+                        <div class="form-cell label">Opis</div>
+                        <div class="form-cell value">
+                            <asp:TextBox ID="tbxAddAccomImageDescription" runat="server" Text="" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" ErrorMessage="*" ControlToValidate="tbxAddAccomImageDescription" runat="server" ValidationGroup="uploadimage" />
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell label">Odaberi sliku</div>
+                        <div class="form-cell value">
+                            <asp:FileUpload ID="fuAddAccommImage" runat="server" />
+                            <asp:Button ID="btnUploadAccommImagePreview" Text="Upload" runat="server" 
+                                onclick="btnUploadAccommImagePreview_Click" />
+                            <asp:RequiredFieldValidator ID="rfvAddAccommImage" runat="server" ErrorMessage="*" ControlToValidate="fuAddAccommImage" ValidationGroup="uploadimage" />
+                            <div id="preview">
+                                <img id="imgThumb"  src="" alt="" runat="server" visible="false" />
+                                <asp:HiddenField ID="hfCrop" runat="server" Value="" />
+                            </div>
+                        </div>
+                        <div class="close-row"></div>
+                    </div>
+                </div>
+                <div class="action-bar">
+                    <asp:LinkButton ID="btnUploadAccommImage" CssClass="save-button button" onclick="btnUploadAccommImage_Click" runat="server" Text="Spremi sliku" ValidationGroup="uploadimage" />
+                </div>
+            </fieldset>
             
-            <br />
-
-            <asp:Button ID="btnUploadAccommImage" Text="Submit" runat="server" 
-               onclick="btnUploadAccommImage_Click" ValidationGroup="uploadimage" />
-            <br />
-            <br />
+            <asp:Panel ID="pnlImageEdit" runat="server">
+                <fieldset class="editor basic-info ui-corner-all to-left on-right">
+                    <legend>Izmjena slike</legend>
+                    <div class="form-editor">
+                        <div class="form-row">
+                            <div class="form-cell label">Naziv</div>
+                            <div class="form-cell value">
+                                <asp:TextBox ID="tbxImageEditTitle" runat="server" />
+                                <asp:RequiredFieldValidator ID="rfvImageEditTitle" runat="server" 
+                                ErrorMessage="*" 
+                                ControlToValidate="tbxImageEditTitle" 
+                                ValidationGroup="imageeditsave" />
+                            </div>
+                            <div class="close-row"></div>
+                        </div>  
+                        <div class="form-row">
+                            <div class="form-cell label">Opis</div>
+                            <div class="form-cell value">
+                                <asp:TextBox ID="tbxImageEditDescription" runat="server" />
+                                <asp:RequiredFieldValidator ID="rfvImageEditDescription" runat="server" 
+                                ErrorMessage="*" 
+                                ControlToValidate="tbxImageEditDescription" 
+                                ValidationGroup="imageeditsave" />
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                    </div>
+                    <div class="action-bar">
+                        <asp:Button ID="btnImageEditSave" Text="Spremi izmjene" runat="server" CssClass="save-button button"
+                                    oncommand="btnImageEditSave_Command" CommandName="imageeditsave" ValidationGroup="imageeditsave" />
+                    </div>
+                </fieldset>
+            </asp:Panel>
+            <div class="clearfix"></div>
             <asp:Repeater ID="repAccommodationImages" runat="server">
                 <HeaderTemplate>
-                    <h2>Pregled slika</h2>
+                    <div class="list-wrapper photo-list-wrapper">
+                        <h2 class="title">Pregled slika</h2>
+                        <ul class="link-list">
+                    <h2></h2>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <div id="<%# "img_" + Eval("Id") %>">
+                    <li id="<%# "img_" + Eval("Id") %>" class="image-wrapper">
                         <img src="<%# Eval("Src") %>" alt="<%# Eval("Alt") %>" title="<%# Eval("Title") %>" longdesc="<%# Eval("Description") %>" />
-                        <asp:LinkButton runat="server"
-                            Text="Uredi"
-                            CommandName="imageedit"
-                            CommandArgument='<%# Eval("Id") %>'
-                            OnCommand="lbtnEditDeleteImage_Command" >
-                        </asp:LinkButton>
-                        &nbsp;|&nbsp                         
-                        <asp:LinkButton runat="server"
-                            Text="Briši"
-                            CommandName="imagedelete"
-                            CommandArgument='<%# Eval("Id") %>'
-                            OnCommand="lbtnEditDeleteImage_Command" >
-                        </asp:LinkButton>
-                    </div>
+                        <div class="action-bar-inside">
+                            <asp:LinkButton runat="server"
+                                Text="Uredi"
+                                CommandName="imageedit"
+                                CommandArgument='<%# Eval("Id") %>'
+                                OnCommand="lbtnEditDeleteImage_Command"
+                                CssClass="save"
+                                 >
+                            </asp:LinkButton>
+                            &nbsp;|&nbsp                         
+                            <asp:LinkButton runat="server"
+                                Text="Briši"
+                                CommandName="imagedelete"
+                                CommandArgument='<%# Eval("Id") %>'
+                                OnCommand="lbtnEditDeleteImage_Command"
+                                CssClass="delete" >
+                            </asp:LinkButton>
+                        </div>
+                    </li>
                 </ItemTemplate>
-                <SeparatorTemplate>
-                    <br />
-                    <br />
-                </SeparatorTemplate>
+                <FooterTemplate>
+                        <li class="clearfix"></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>    
+                </FooterTemplate>
             </asp:Repeater>
 
-            <asp:Panel ID="pnlImageEdit" runat="server">
-
-                <h3>Naslov slike</h3>
-                <asp:TextBox ID="tbxImageEditTitle" runat="server" />
-                <asp:RequiredFieldValidator ID="rfvImageEditTitle" runat="server" 
-                ErrorMessage="*" 
-                ControlToValidate="tbxImageEditTitle" 
-                ValidationGroup="imageeditsave" />
-
-                <h3>Opis slike</h3>
-                <asp:TextBox ID="tbxImageEditDescription" runat="server" />
-                <asp:RequiredFieldValidator ID="rfvImageEditDescription" runat="server" 
-                ErrorMessage="*" 
-                ControlToValidate="tbxImageEditDescription" 
-                ValidationGroup="imageeditsave" />
-                <br /><br />
-                <asp:Button ID="btnImageEditSave" Text="Spremi izmjene" runat="server" 
-                    oncommand="btnImageEditSave_Command" CommandName="imageeditsave" ValidationGroup="imageeditsave" />
-            </asp:Panel>
+            
 
         </asp:View>
 
         <asp:View ID="vwPrices" runat="server">
+            <div class="list-wrapper cjenik-list-wrapper">
+                <h2 class="title">Cijenici</h2>  
+                <asp:Repeater ID="repPrices" runat="server">
+                    <HeaderTemplate>
+                        <ul class="link-list">
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <li class="sub-item">
+                                <h3><asp:LinkButton runat="server"
+                                            CommandArgument='<%# Eval("Id") %>'
+                                            CommandName="priceedit"
+                                            OnCommand="PriceEdit_Command" >
+                            <%# String.Format("{0}, {1}, {2}{3}", FormatDate((DateTime?)Eval("DateStart"), (DateTime?)Eval("DateEnd")), Eval("Name"), ((decimal)Eval("Value")).ToString("0,0.00", System.Globalization.CultureInfo.InvariantCulture), Eval("Currency.Symbol"))%>
+                            </asp:LinkButton>
+                        </h3></li>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </ul>
+                    </FooterTemplate>
+                </asp:Repeater>
             
-          <h1>Cijenici</h1>
-
-            <asp:Repeater ID="repPrices" runat="server">
-                <ItemTemplate>
-                    <p>
-                        <asp:LinkButton runat="server"
-                                        CommandArgument='<%# Eval("Id") %>'
-                                        CommandName="priceedit"
-                                        OnCommand="PriceEdit_Command" >
-                        <%# String.Format("{0}, {1}, {2}{3}", FormatDate((DateTime?)Eval("DateStart"), (DateTime?)Eval("DateEnd")), Eval("Name"), ((decimal)Eval("Value")).ToString("0,0.00", System.Globalization.CultureInfo.InvariantCulture), Eval("Currency.Symbol"))%>
-                        </asp:LinkButton>
-                    </p>
-                </ItemTemplate>
-                <SeparatorTemplate>
-                </SeparatorTemplate>
-            </asp:Repeater>
-            <br />
-            <asp:LinkButton 
-                runat="server"
-                CommandName="pricenew"
-                CommandArgument=""
-                OnCommand="PriceEdit_Command">
-                Unos cijenika
-            </asp:LinkButton>
-            
+            </div>
+            <div class="action-bar">
+                <asp:LinkButton runat="server" CommandName="pricenew" CommandArgument="" OnCommand="PriceEdit_Command" CssClass="button">Unos cijenika</asp:LinkButton>
+            </div>
             
             <br />
             <br />
             <asp:Panel ID="pnlPriceEdit" runat="server">
-                <h2 id="hPriceEdit" runat="server">Uredi|Unesi</h2>
-                <h3>Naziv</h3>
-                <asp:TextBox ID="tbxPriceEditName" runat="server" />
-                <asp:RequiredFieldValidator ID="rfvPriceEditName" runat="server" 
-                ErrorMessage="*" 
-                ControlToValidate="tbxPriceEditName" 
-                ValidationGroup="priceedit" />
-                
-                <h3>Razdoblje</h3>
-                <div id="priceperiod">
-                    <input id="rbtnPriceCalendar" runat="server" type="radio" checked="true" name="priceperiod" value="specificperiod" title="Odabir na kalendaru" />Odaberi datume
-                    <br />
-                    <div id="enterdates">                    
-                        <label for="<%= tbxPriceEditStart.ClientID %>">Od</label>
-                        <asp:TextBox ID="tbxPriceEditStart" runat="server" />
-                        <asp:RequiredFieldValidator runat="server" 
-                        ErrorMessage="*" 
-                        ControlToValidate="tbxPriceEditStart" 
-                        ValidationGroup="priceeditcal" />
-                        <label for="<%= tbxPriceEditEnd.ClientID %>">do</label>
-                        <asp:TextBox ID="tbxPriceEditEnd" runat="server" />
-                        <asp:RequiredFieldValidator runat="server" 
-                        ErrorMessage="*" 
-                        ControlToValidate="tbxPriceEditEnd" 
-                        ValidationGroup="priceeditcal" />
+                <fieldset class="editor basic-info ui-corner-all">
+                    <legend>Podaci o cjeniku</legend>
+                    <div class="form-editor">
+                        <div class="form-row">
+                            <div class="form-cell label">Naziv cjenika</div>
+                            <div class="form-cell value">
+                                <asp:TextBox ID="tbxPriceEditName" runat="server" />
+                                <asp:RequiredFieldValidator ID="rfvPriceEditName" runat="server" 
+                                ErrorMessage="*" 
+                                ControlToValidate="tbxPriceEditName" 
+                                ValidationGroup="priceedit" />
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label">Razdoblje</div>
+                            <div class="form-cell value">
+                                <div id="priceperiod">
+                                <input id="rbtnPriceCalendar" runat="server" type="radio" checked="true" name="priceperiod" value="specificperiod" title="Odabir na kalendaru" />Odaberi datume
+                                <br />
+                                <div id="enterdates">                    
+                                    <label for="<%= tbxPriceEditStart.ClientID %>">Od</label>
+                                    <asp:TextBox ID="tbxPriceEditStart" runat="server" CssClass="datepicker required" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                    ErrorMessage="*" 
+                                    ControlToValidate="tbxPriceEditStart" 
+                                    ValidationGroup="priceeditcal" />
+                                    <label for="<%= tbxPriceEditEnd.ClientID %>">-</label>
+                                    <asp:TextBox ID="tbxPriceEditEnd" runat="server"  CssClass="datepicker required"/>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                    ErrorMessage="*" 
+                                    ControlToValidate="tbxPriceEditEnd" 
+                                    ValidationGroup="priceeditcal" />
+                                </div>
+                                <input id="rbtnPriceWholeYear" runat="server" type="radio" name="priceperiod" value="wholeyear" title="Cijela godina" />Cijela godina
+                            </div>
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label">Cijena</div>
+                            <div class="form-cell value">
+                                <asp:TextBox ID="tbxPriceEditValue" runat="server" CssClass="required price" />
+                                
+                                <asp:RequiredFieldValidator ID="rfvPriceEditValue" runat="server" 
+                                ErrorMessage="*" 
+                                ControlToValidate="tbxPriceEditValue" 
+                                ValidationGroup="priceedit" />
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+                                ValidationExpression="[0-9]+(\.[0-9]{1,2})?"
+                                ErrorMessage="npr. 199.00" 
+                                ControlToValidate="tbxPriceEditValue" 
+                                ValidationGroup="priceedit" />
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label">Valuta</div>
+                            <div class="form-cell value">
+                                <asp:DropDownList ID="ddlCurrency" runat="server" >
+                                </asp:DropDownList>
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label"></div>
+                            <div class="form-cell value">
+                                
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-cell label"></div>
+                            <div class="form-cell value">
+                                
+                            </div>
+                            <div class="close-row"></div>
+                        </div>
                     </div>
-                    <input id="rbtnPriceWholeYear" runat="server" type="radio" name="priceperiod" value="wholeyear" title="Cijela godina" />Cijela godina
-                </div>
-
-                <script type="text/javascript">
-                    $("#priceperiod input[type=radio]").bind("change", function () {
-                        var value = $(this).val();
-                        if (value == "wholeyear") {
-                            $("#enterdates").hide();
-                        }
-                        else if (value == "specificperiod") {
-                            $("#enterdates").show();
-                        }
-                    });
-                </script>
-
-                <h3>Cijena</h3>
-                <asp:TextBox ID="tbxPriceEditValue" runat="server" />
-                <asp:DropDownList ID="ddlCurrency" runat="server" >
-                </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="rfvPriceEditValue" runat="server" 
-                ErrorMessage="*" 
-                ControlToValidate="tbxPriceEditValue" 
-                ValidationGroup="priceedit" />
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
-                ValidationExpression="[0-9]+(\.[0-9]{1,2})?"
-                ErrorMessage="npr. 199.00" 
-                ControlToValidate="tbxPriceEditValue" 
-                ValidationGroup="priceedit" />
-
-                <br />
-                <br />
-
-                <asp:Button ID="btnPriceEditDelete" Text="Briši" runat="server" CommandName="pricedelete" OnCommand="PriceSubmit_Command" ValidationGroup="priceedit"  />
-                <asp:Button ID="btnPriceEditSave" Text="Submit" runat="server" CommandName="pricesaveedit|pricesavenew" OnCommand="PriceSubmit_Command" ValidationGroup="priceedit" />
+                    <div class="action-bar">
+                        <asp:LinkButton ID="btnPriceEditDelete" Text="Briši" runat="server" CommandName="pricedelete" OnCommand="PriceSubmit_Command" ValidationGroup="priceedit" CssClass="delete-button button" ></asp:LinkButton>
+                        <asp:LinkButton ID="btnPriceEditSave" Text="Spremi" runat="server" CommandName="pricesaveedit|pricesavenew" OnCommand="PriceSubmit_Command" ValidationGroup="priceedit" CssClass="save-button button" ></asp:LinkButton>
+                    </div>
+                </fieldset>
+                
             </asp:Panel>
 
         </asp:View>
@@ -543,7 +666,8 @@
     </div>
     <br />
     <asp:Literal ID="ltlStatus" runat="server"></asp:Literal>
-
+    
+    <div class="clearfix"></div>
     <a id="aBackToAgency" runat="server" class="agency-link button-header-back ui-corner-all" href="">Natrag na agenciju</a>
     
 </asp:Content>

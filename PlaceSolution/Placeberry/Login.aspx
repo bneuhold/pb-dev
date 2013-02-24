@@ -1,7 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterHome.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script src="/resources/scripts/jqueriui/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <link href="/resources/scripts/jqueriui/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
     <link type="text/css" media="all" rel="Stylesheet" href="/resources/css/login.css" />
+    
+    <script language="javascript" type="text/javascript">
+        $(function () {
+            $(".button").button();
+
+        });
+
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
@@ -9,7 +20,7 @@
         <asp:View ID="vwLogin" runat="server">
 
             <div class="login-wrapper">
-                <fieldset class="editor">
+                <fieldset class="editor ui-corner-all">
                 <legend>Login</legend>
 
                 <div class="login-container">
@@ -42,7 +53,7 @@
 
                         <div class="form-row">
                             <div class="form-cell label"></div>
-                            <div class="form-cell value"><asp:Button ID="btnLogin" Text="Prijavi me" runat="server" onclick="btnLogin_Click" ValidationGroup="login" /></div>
+                            <div class="form-cell value"><asp:Button ID="btnLogin" Text="Prijavi me" runat="server" onclick="btnLogin_Click" ValidationGroup="login" CssClass="button login" /></div>
                             <div class="close-row"></div>
                         </div>
                 

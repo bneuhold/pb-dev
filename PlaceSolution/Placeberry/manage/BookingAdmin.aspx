@@ -1,30 +1,26 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterHome.master" CodeFile="BookingAdmin.aspx.cs" Inherits="manage_BookingAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterManage.master" CodeFile="BookingAdmin.aspx.cs" Inherits="manage_BookingAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="../resources/css/booking_admin.css"/>        
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
+    <div class="header-bar">
+        <asp:Label runat="server" ID="lblAgencyName"></asp:Label> - pregled rezervacija
+    </div>
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true" />
 
     <div class="main_content" style="width:800px; min-height:400px;">
 
-    <div style="width:100%; display:block; margin:20px 0; text-align:center; font-size:15px;">
-        <asp:Label runat="server" ID="lblAgencyName"></asp:Label> - pregled rezervacija
-    </div>
-
-    <div class="accomm_list_title">
-        <h2><%= Resources.booking.AdminAccommList %>:</h2>
-    </div>
-
     <div class="accomm_list">
         <asp:Repeater ID="repAccommodation" runat="server">
             <HeaderTemplate>
-                <ul>
+                <div class="list-wrapper in-content">
+                <h2 class="title"><%= Resources.booking.AdminAccommList %>:</h2>
+                <ul class="link-list">
             </HeaderTemplate>
             <ItemTemplate>
-                    <li>
+                    <li class="sub-item">
                         <span><a href="<%# "/manage/bookingadmin.aspx?agencyId=" + GetAgency().Id + "&accommid=" + Eval("Id") %>"><%# Eval("Name") %></a></span> 
                     </li>
             </ItemTemplate>
@@ -163,10 +159,8 @@
             </div>
         </asp:PlaceHolder>
 
-        <div style="clear:both; float:left; display:inline; margin:50px 0; width:100%;">
-            Povratak na <a href="/manage/Customer.aspx">korisničke stranice</a>
-        </div>
-
+        
+        <a href="/manage/Customer.aspx" class="agency-link button-header-back ui-corner-all">korisničke stranice</a>
         </ContentTemplate>
 
     </asp:UpdatePanel>

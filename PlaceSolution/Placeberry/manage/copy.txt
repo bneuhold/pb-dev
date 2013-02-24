@@ -1,0 +1,23 @@
+﻿<fieldset class="editor basic-info ui-corner-all">
+    <legend>Booking</legend>
+
+    <div class="form-editor">
+
+		<div class="form-row">
+			<div class="form-cell label"></div>
+			<div class="form-cell value">
+                            
+			</div>
+			<div class="close-row"></div>
+		</div>
+	</div>
+</fieldset>
+
+<div class="list-wrapper to-left agency in-content">
+    <h2 class="title"></h2>
+    <ul class="link-list">
+
+		<li class="sub-item"><h3><a></a></h3></li>
+		<li class="sub-item"></li>
+	</ul>
+</div>

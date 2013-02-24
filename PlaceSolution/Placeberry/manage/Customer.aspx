@@ -20,7 +20,7 @@
 
     <asp:Repeater runat="server" ID="repAgencies" >
         <HeaderTemplate>
-            <div class="list-wrapper agency in-content">
+            <div class="list-wrapper to-left agency in-content">
                 <h2 class="title">Agencije:</h2>
                 <ul class="link-list">
         </HeaderTemplate>

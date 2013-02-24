@@ -3,20 +3,50 @@
 .action-bar{padding:5px 0px;}
 .action-bar a{font-size:13px;}
 .action-bar .button{background: #EFF3F3;color: #333;}
+.datepicker{ width: 75px;}
+.date-from-to{width:180px;}
+#enterdates{ width: 250px;}
+.required{}
+.price{ width: 50px;}
+.clearfix{clear:both;}
+.action-bar.step-buttons{width:400px;margin: 0 auto;}
+.action-bar.step-buttons .back{text-decoration: none;float:left;padding: 5px 7px;}
+.action-bar.step-buttons .next{text-decoration: none; float: right;background:#749E0C;color:#fff;padding: 5px 7px;}
+.centred{ margin-left:auto;margin-right:auto;}
+.warning-message{ color: #BF1E2D;}
+
+
 
 fieldset.editor{border:solid 2px #006F9A;padding:10px;}
 fieldset.editor legend{color:#006F9A;font-size:14px;padding:0 10px;}
 fieldset.editor .form-editor{display:table;font-size:12px;}
 fieldset.editor .form-editor .form-row{display:table-row;}
 fieldset.editor .form-editor .form-row .form-cell{display:table-cell;font-weight:bold;padding:5px;vertical-align:middle;}
+fieldset.editor .form-editor .form-row.separator .form-cell{ border-bottom: dotted 1px #006F9A;}
 fieldset.editor .form-editor .form-row .form-cell.label{width:150px;padding-right:10px;color:#006F9A;}
 fieldset.editor .form-editor .form-row .close-row{display:none;}
 fieldset.editor input[type='text'], fieldset.editor textarea, fieldset.editor select{padding:3px 5px;}
+fieldset.editor .subtext{ color: #454545;font-size:11px;}
+fieldset.editor .form-editor .form-row .form-cell .line-holder{ position: relative;display: block;width:12px;height:12px;}
+fieldset.editor .form-editor .form-row .form-cell .line-holder .line{ position: absolute;top:0;left:0;width:400px;}
 fieldset.editor .edit-button{background:#006F9A;color:#fff;font-size:13px;}
 fieldset.editor .save-button{background:#749E0C;color:#fff;font-size:13px;}
 fieldset.editor .delete-button{background:#BF1E2D;color:#fff;font-size:13px;}
 fieldset.editor .action-bar {padding:5px 5px 5px 160px;}
 .basic-info{width:400px;}
+
+.sum-footer {display:table;font-size:12px;background-color:#006F9A;color:#fff;width:400px;}
+.sum-footer .form-row{display:table-row;}
+.sum-footer .form-row  .form-cell{display:table-cell;width:200px;font-weight:bold;padding:5px;vertical-align:middle;}
+.sum-footer .form-row  .form-cell.label{padding-right:10px;color:#A9DAEC;}
+.sum-footer .form-row  .form-cell.value{ color: #fff;background-color:#006F9A;}
+fieldset.editor .form-editor .form-row .close-row{display:none;}
+
+/************************************ Slike ******************************************/
+.image-wrapper{ padding: 5px;border: solid 1px #ccc;margin:5px;}
+.image-wrapper .action-bar-inside{ text-align: center;font-size:11px;margin-top:5px;font-weight:bold;}
+.image-wrapper .action-bar-inside .save{color:#749E0C;}
+.image-wrapper .action-bar-inside .delete{ color: #BF1E2D;}
 
 
 .manage-wrapper{position:relative;padding:42px 0px 20px 0px;font-size:1em;}
@@ -37,14 +67,25 @@ fieldset.editor .action-bar {padding:5px 5px 5px 160px;}
 .super-admin-options{font-size:14px;margin-bottom:20px;background:#F5EDD2;padding:20px !important;}
 .super-admin-options ul li{margin:10px 0px;}
 
-.list-wrapper{float:left;}
+.list-wrapper{}
 .list-wrapper .title{padding:10px 15px;background:#006F9A;color:#fff;}
 .list-wrapper .link-list{padding:0 0px;}
 .list-wrapper .link-list .sub-item{margin: 0px 0 0px 0;padding:5px 15px 10px 15px;border-bottom:solid 1px #ccc;}
+.list-wrapper .link-list .sub-item.odd{ background-color: #F5EDD2;}
 .list-wrapper .link-list .sub-item .item-title{font-weight:bold;}
 .list-wrapper .link-list .sub-item .item-content{color:#ccc;}
 .clearfix{clear:both;}
 
+.cjenik-list-wrapper{ width: 400px;}
+.photo-list-wrapper{margin-top:30px;}
+.photo-list-wrapper .image-wrapper{float:left;}
+
+.booking-days{width:400px;}
+.promocode{width:400px;}
+.promocode .promo-editor{ margin: 5px 20px;}
+.promocode .promo-editor .button{ padding: 5px 7px;background: #006F9A;color: #fff;text-decoration: none;}
+.promocode input{ margin: 0 20px 0 0px;}
+.step-title{font-size:16px;color: #006F9A;margin: 10px auto;}
 
 /********************* AUTOCOMPLETE ****************************************/
 .selectedrow{background-color:lime;}

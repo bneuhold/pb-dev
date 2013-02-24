@@ -1,14 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Placeberry", "Placeberry", "{2A7B5F3E-D5E5-4B17-8779-B7681C384269}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Placeberry", "Placeberry\", "{2A7B5F3E-D5E5-4B17-8779-B7681C384269}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = ""
 		SccAuxPath = ""
 		SccLocalPath = ""
 		SccProvider = ""
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
-		ProjectReferences = "{3C498118-626D-45F3-94D9-C39CA1AFF6FA}|LibGoogleWeather.dll;{BB558F9C-2617-4429-8AF6-6B88135EE72F}|LibWeather.dll;{c1c978bf-72a4-415a-9426-d1ea421b37cf}|CroatianAnalyzer.dll;{5205f383-faa7-4ca2-8d51-a5494a7abeae}|QueryRanking.dll;{29385A2D-EAC1-4777-BC01-C060C2002307}|FuzzyStrings.dll;{2418b4a4-f800-400b-b16e-520f0abe1377}|TextIndexing.dll;"
+		ProjectReferences = "{3C498118-626D-45F3-94D9-C39CA1AFF6FA}|LibGoogleWeather.dll;{BB558F9C-2617-4429-8AF6-6B88135EE72F}|LibWeather.dll;{c1c978bf-72a4-415a-9426-d1ea421b37cf}|CroatianAnalyzer.dll;{5205f383-faa7-4ca2-8d51-a5494a7abeae}|QueryRanking.dll;{29385A2D-EAC1-4777-BC01-C060C2002307}|FuzzyStrings.dll;{2418b4a4-f800-400b-b16e-520f0abe1377}|TextIndexing.dll;{8680A421-E6BA-41CF-A022-763C9349C9B4}|LibUtility.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/alpha.placeberry.com"
 		Debug.AspNetCompiler.PhysicalPath = "Placeberry\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\alpha.placeberry.com\"
@@ -51,7 +51,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibGoogleWeather", "LibGoog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaceberryCrawlerConsole", "PlaceberryCrawlerConsole\PlaceberryCrawlerConsole.csproj", "{56CC8233-9A9A-4018-91A9-C887647D8776}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Putovalica", "Putovalica", "{3411A391-BB9C-4AEA-AE5B-A426026BF99F}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Putovalica", "Putovalica\", "{3411A391-BB9C-4AEA-AE5B-A426026BF99F}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/Putovalica"
