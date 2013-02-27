@@ -12,8 +12,8 @@ public partial class Controls_LoginCtrl : System.Web.UI.UserControl
     {
         base.OnInit(e);
 
-        this.lbLogout.Click += new EventHandler(lbLogout_Click);
-        this.lbLogin.Click += new EventHandler(lbLogin_Click);
+        //this.lbLogout.Click += new EventHandler(lbLogout_Click);
+        //this.lbLogin.Click += new EventHandler(lbLogin_Click);
     }
 
     void lbLogin_Click(object sender, EventArgs e)

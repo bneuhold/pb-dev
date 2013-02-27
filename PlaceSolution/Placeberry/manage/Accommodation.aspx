@@ -9,6 +9,11 @@
     <link href="/resources/scripts/jcrop/jquery.Jcrop.css" rel="stylesheet" type="text/css" />
     <link href="/resources/scripts/jqueriui/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
 
+    <script src="/resources/scripts/fancybox/jquery.mousewheel-3.0.4.pack.js" type="text/javascript"></script>
+    <script src="/resources/scripts/fancybox/jquery.easing-1.3.pack.js" type="text/javascript"></script>
+    <script src="/resources/scripts/fancybox/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>
+    <link href="/resources/scripts/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+
     <script type="text/javascript">
 
         //datepicker i jCrop
@@ -44,6 +49,15 @@
                 else if (value == "specificperiod") {
                     $("#enterdates").show();
                 }
+            });
+
+            $("a.gallery-link").fancybox({
+                'opacity': true,
+                'overlayShow': true,
+                'overlayOpacity': 0.7,
+                //'overlayColor' : '#666'
+                'transitionIn': 'elastic',
+                'transitionOut': 'fade'
             });
         });
 
@@ -97,7 +111,7 @@
                 <asp:LinkButton ID="btnPublishAccomAdvert" Text="Publish" runat="server" CssClass="save-button button"
                 onclick="btnPublishAccomAdvert_Click" />
                 <a id="aImages" runat="server" class="button" href="">Dodaj ili uredi slike</a>
-                <a id="aPrices" runat="server" class="button" href="">Dodaj ili uredi cijenike</a>
+                <a id="aPrices" runat="server" class="button" href="">Dodaj ili uredi cjenike</a>
             </div>
             
     
@@ -510,7 +524,9 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <li id="<%# "img_" + Eval("Id") %>" class="image-wrapper">
-                        <img src="<%# Eval("Src") %>" alt="<%# Eval("Alt") %>" title="<%# Eval("Title") %>" longdesc="<%# Eval("Description") %>" />
+                        <a class="gallery-link" href="<%# Eval("Src") %>">
+                            <img src="/thumb.aspx?src=<%# Eval("Src") %>&mh=160&mw=240&gth=h&crop=1" alt="<%# Eval("Alt") %>" title="<%# Eval("Title") %>" longdesc="<%# Eval("Description") %>" />
+                        </a>
                         <div class="action-bar-inside">
                             <asp:LinkButton runat="server"
                                 Text="Uredi"
@@ -545,7 +561,7 @@
 
         <asp:View ID="vwPrices" runat="server">
             <div class="list-wrapper cjenik-list-wrapper">
-                <h2 class="title">Cijenici</h2>  
+                <h2 class="title">Cjenici</h2>  
                 <asp:Repeater ID="repPrices" runat="server">
                     <HeaderTemplate>
                         <ul class="link-list">
@@ -567,7 +583,7 @@
             
             </div>
             <div class="action-bar">
-                <asp:LinkButton runat="server" CommandName="pricenew" CommandArgument="" OnCommand="PriceEdit_Command" CssClass="button">Unos cijenika</asp:LinkButton>
+                <asp:LinkButton runat="server" CommandName="pricenew" CommandArgument="" OnCommand="PriceEdit_Command" CssClass="button">Unos cjenika</asp:LinkButton>
             </div>
             
             <br />
