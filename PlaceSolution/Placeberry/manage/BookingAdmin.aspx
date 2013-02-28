@@ -91,72 +91,150 @@
         </asp:PlaceHolder>
 
         <asp:PlaceHolder runat="server" ID="phSelectedBooking">
-            <div style="width:100%; text-align:center;">
-                <table style="margin:0 auto;">
-                <tr>
-                    <td style="text-align:right;">Početak rezervacije:</td><td><asp:Label runat="server" ID="lblSelBookDateFrom"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Kraj rezervacije:</td><td><asp:Label runat="server" ID="lblSelBookDateTo"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Status:</td><td><asp:Label runat="server" ID="lblSelBookStatus"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Osnovna cijena:</td><td><asp:Label runat="server" ID="lblSelBookPriceBasic"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Konačna cijena:</td><td><asp:Label runat="server" ID="lblSelBookPricaSum"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Broj osoba:</td><td><asp:Label runat="server" ID="lblSelBookNumOfPersons"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Broj djece do 3 godine:</td><td><asp:Label runat="server" ID="lblSelBookNumOfBabies"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Datum kreiranja rezervacije:</td><td><asp:Label runat="server" ID="lblSelBookCreateDate"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Kreirano od administratora:</td><td><asp:Label runat="server" ID="lblSelBookAdminCreateName"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Datum zandnje promjene:</td><td><asp:Label runat="server" ID="lblLastUpdateDate"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:center; height:40px; vertical-align:middle; padding-top:10px; font-weight:bold;" colspan="2">Podaci o gostu:</td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Ime:</td><td><asp:Label runat="server" ID="lblUserFirstName"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Prezime:</td><td><asp:Label runat="server" ID="lblUserLastName"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Email:</td><td><asp:Label runat="server" ID="lblUserEmail"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Phone:</td><td><asp:Label runat="server" ID="lblUserPhone"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Country:</td><td><asp:Label runat="server" ID="lblUserCountry"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">City:</td><td><asp:Label runat="server" ID="lblUserCity"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Street:</td><td><asp:Label runat="server" ID="lblUserStreet"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td style="text-align:center; vertical-align:bottom; height:50px;">
-                        <asp:LinkButton runat="server" ID="lbDeleteBook" OnClientClick="return confirm('Dali ste sigurni da želite obrisati rezervaciju?');">Obriši rezervaciju</asp:LinkButton>
-                    </td>
-                    <td style="text-align:center; vertical-align:bottom; height:50px;">
-                        <asp:HyperLink runat="server" ID="hlEditBook">Uredi rezervaciju</asp:HyperLink>
-                    </td>
-                </tr>
-                </table>
-            </div>
+
+            <fieldset class="editor basic-info ui-corner-all centred">
+                <legend>Rezervacija</legend>
+
+                <div class="form-editor">
+
+		            <div class="form-row">
+			            <div class="form-cell label">Početak rezervacije</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblSelBookDateFrom"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Kraj rezervacije</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblSelBookDateTo"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Status</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblSelBookStatus"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Osnovna cijena</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblSelBookPriceBasic"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Konačna cijena</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblSelBookPricaSum"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Broj osoba</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblSelBookNumOfPersons"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Broj djece do 3 godine</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblSelBookNumOfBabies"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Datum kreiranja rezervacije</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblSelBookCreateDate"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Kreirano od administratora</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblSelBookAdminCreateName"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Datum zadnje promjene</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblLastUpdateDate"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row separator">
+			            <div class="form-cell label">
+                            <div class="line-holder">
+                                <div class="line">
+                                    Podaci o gostu
+                                </div>
+                            </div>
+                        </div>
+			            <div class="form-cell value">
+                            
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Ime</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblUserFirstName"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Prezime</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblUserLastName"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Email</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblUserEmail"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Phone</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblUserPhone"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Country</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblUserCountry"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">City</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblUserCity"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+                    <div class="form-row">
+			            <div class="form-cell label">Street</div>
+			            <div class="form-cell value">
+                            <asp:Label runat="server" ID="lblUserStreet"></asp:Label>
+			            </div>
+			            <div class="close-row"></div>
+		            </div>
+	            </div>
+                <div class="action-bar">
+                    <asp:LinkButton runat="server" ID="lbDeleteBook" CssClass="delete-button button" OnClientClick="return confirm('Dali ste sigurni da želite obrisati rezervaciju?');">Obriši rezervaciju</asp:LinkButton>
+                    <asp:HyperLink runat="server" CssClass="edit-button button" ID="hlEditBook">Uredi rezervaciju</asp:HyperLink>
+                </div>
+            </fieldset>
         </asp:PlaceHolder>
 
         
