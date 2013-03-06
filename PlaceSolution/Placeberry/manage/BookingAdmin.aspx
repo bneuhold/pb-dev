@@ -230,9 +230,9 @@
 			            <div class="close-row"></div>
 		            </div>
 	            </div>
-                <div class="action-bar">
-                    <asp:LinkButton runat="server" ID="lbDeleteBook" CssClass="delete-button button" OnClientClick="return confirm('Dali ste sigurni da želite obrisati rezervaciju?');">Obriši rezervaciju</asp:LinkButton>
-                    <asp:HyperLink runat="server" CssClass="edit-button button" ID="hlEditBook">Uredi rezervaciju</asp:HyperLink>
+                <div class="action-bar no-left-padding">
+                    <asp:LinkButton runat="server" ID="lbDeleteBook" CssClass="delete-button button-like ui-corner-all" OnClientClick="return confirm('Dali ste sigurni da želite obrisati rezervaciju?');">Obriši rezervaciju</asp:LinkButton>
+                    <asp:HyperLink runat="server" CssClass="edit-button button-like ui-corner-all" ID="hlEditBook">Uredi rezervaciju</asp:HyperLink>
                 </div>
             </fieldset>
         </asp:PlaceHolder>
